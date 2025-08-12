@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+.barra-navegacion {
+    display: flex;
+    width: 100%;
+    height: 15vh;
+    background-color: #000;
+}
+
+.logo-sitio {
+    display: flex;
+    justify-content: center;
+    width: 15vw;
+    height: 15vh;
+}
+
+.contenedor-mapa {
+    display: flex;
+    width: 100vw;
+    height: 42.5vh;
+}
+
+.contenedor-mapa iframe {
+    display: flex;
+    width: 100vw;
+    height: 42.5vh;
+}
+
+.seccion-contacto {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100vw;
+    height: 42.5%;
+}
+
+.datos-contacto {
+    display: flex;
+    justify-content: center;
+    width: 50vw;
+    height: 42.5vh;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.direccion, .telefono, .correo {
+    align-items: center;
+    color: #2C99A1;
+    font-size: 2em;
+}
+
+.detalle-info {
+    display: flex;
+    align-items: center;
+    color: #000;
+    font-size: 0.6em;
+}
+
+.logo-empresa {
+    display: flex;
+    justify-content: center;
+    width: 50vw;
+    height: 42.5vh;
+}
+
+/* Responsive para tablets y pantallas medianas */
+@media (max-width: 1024px) {
+    .seccion-contacto {
+        flex-direction: row;
+        height: auto;
+    }
+
+    .logo-sitio {
+        width: auto;
+        height: auto;
+    }
+
+    .datos-contacto, .logo-empresa {
+        width: 100%;
+        height: auto;
+    }
+
+    .logo-empresa img {
+        width: 100%;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    li {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+    .seccion-contacto {
+        flex-direction: row;
+        height: auto;
+    }
+
+    .logo-sitio {
+        width: auto;
+        height: auto;
+    }
+
+    .datos-contacto, .logo-empresa {
+        width: 100%;
+        height: auto;
+    }
+
+    .logo-empresa img {
+        width: 100%;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    li {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+}
