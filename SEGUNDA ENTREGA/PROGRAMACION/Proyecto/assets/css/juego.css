@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu{
+    display: flex;
+    background-color: #FE8A38;
+    justify-content: center;
+    width: 100vw;
+    height: 7.5vh;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    color: aliceblue;
+    width: 12.5vw;
+    height: 7.5vh;
+    background-color: black;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 92.5vh;
+}
+
+.tablero{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 60vh;
+    background-color: aqua;
+}
+
+.imagen-tablero{
+    display: flex;
+    justify-content: center;
+}
+
+.mano{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 32.5vh;
+}
+
+.imagen-mano{
+    display: flex;
+    justify-content: center;
+}
+
