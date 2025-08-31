@@ -217,6 +217,8 @@
     background-color: #000;
     font-family: "Inria Sans", sans-serif;
     cursor: pointer;
+    margin-bottom: 1rem;
+
 }
 
 @media (max-width: 1024px) {

@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.inicioexitoso{
+    background-color: #4AB12A;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    width: 90vw;
+    height: 90vh;
+}
+
+section{
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arriba{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    height: 45vh;
+}
+
+.abajo-texto{
+    display: flex;
+    font-size: 4rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 90vw;
+    height: 45vh;
+}
+
+.abajo-boton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    height: 22.5vh;
+}
+
+.contenedor-boton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25vw;
+    height: 10.625vh;
+}
+
+.iniciar-sesion {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3rem;
+    width: 30vw;
+    height: 8vh;
+    background-color: #000;
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    
+    .contenedor-boton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30vw;
+    height: 10.625vh;
+    }
+
+    .iniciar-sesion {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3rem;
+    width: 30vw;
+    height: 8vh;
+    background-color: #000;
+    cursor: pointer;
+    font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .abajo-texto{
+    font-size: 2.5rem;
+    }
+    .contenedor-boton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 10.625vh;
+    }
+    .iniciar-sesion {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3rem;
+    width: 80vw;
+    height: 10vh;
+    background-color: #000;
+    cursor: pointer;
+    font-size: 1.3rem;
+    }
+}
