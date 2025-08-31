@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="stylesheet" href="assets/css/index.css"/>
     <link href="assets/fonts/InriaSans/InriaSans-Regular.ttf">
     <link href="assets/fonts/IrishGrover/IrishGrover-Regular.ttf">
     <link href="assets/icons/fontawesome-free-7.0.0-web/css/all.css" rel="stylesheet"/>
@@ -11,14 +11,23 @@
     <link rel="icon" href="assets/img/D.png" type="image/png">
 </head>
 <body>
+    <header>
     <nav class="barra-navegacion">
         <div class="logo-sitio">
             <a class="logo-sitio" href="../Proyecto/pages/contacto.html">
             <img src="assets/img/CodeFlowBlanco.png" alt="Imagotipo de CodeFlow"/>
             </a>
         </div>
-        <div class="menu-principal"></div>
+        <div class="menu-principal">
+            <ul class="secciones">
+                <li><a href="../Proyecto/index.html"><i class="fa-solid fa-house"></i>Inicio</a></li>
+                <li><a href="../Proyecto/pages/login.html"><i class="fa-solid fa-right-to-bracket"></i>Iniciar Sesión</a></li>
+                <li><a href="../Proyecto/pages/signup.html"><i class="fa-solid fa-user-plus"></i>Registrarse</a></li>
+                <li><a href="../Proyecto/pages/contacto.html"><i class="fa-solid fa-message"></i>Contacto</a></li>
+            </ul>
+        </div>
     </nav>
+    </header>
 
     <main class="contenido-principal">
         <section class="columna-izquierda">
@@ -30,7 +39,7 @@
 
             <div class="contenedor-botones">
                 <div class="boton boton-izquierdo">
-                    <button class="boton-principal" onclick="window.location.href='/Proyecto/pages/juego.html'">JUGAR AL JUEGO COMPLETO</button>
+                    <button class="boton-principal" onclick="window.location.href='../Proyecto/pages/juego.html'">JUGAR AL JUEGO COMPLETO</button>
                 </div>
                 <div class="boton boton-derecho">
                     <button class="boton-secundario">APLICACIÓN PARA CONTAR PUNTOS</button>
@@ -80,7 +89,7 @@
                     </div>
                 </div>
                 <div class="contenedor-boton">
-                    <button class="boton-jugar-ahora" onclick="window.location.href='/Proyecto/pages/juego.html'">JUGAR AHORA</button>
+                    <button class="boton-jugar-ahora" onclick="window.location.href='../Proyecto/pages/juego.html'">JUGAR AHORA</button>
                 </div>
             </div>
         </aside>

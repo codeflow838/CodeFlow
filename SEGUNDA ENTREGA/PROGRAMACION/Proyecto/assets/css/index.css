@@ -22,6 +22,7 @@
     width: 100vw;
     height: 15vh;
     background-color: #000;
+    color:white;
 }
 
 .logo-sitio {
@@ -33,14 +34,35 @@
 
 .menu-principal {
     display: flex;
+    align-items: center;
+    justify-content: end;
     width: 85vw;
     height: 15vh;
 }
+
+.secciones{
+    margin-right: 2rem;
+    display: flex;
+    align-items: end;
+    gap:5rem;
+    list-style-type: none;
+    font-size: 1.3rem;
+    font-family: "Irish Grover", cursive;
+}
+
 
 .contenido-principal {
     display: flex;
     width: 100vw;
     height: 85vh;
+}
+
+.secciones li a{
+    display: flex;
+    align-items: center;
+    gap:0.5rem;
+    text-decoration: none;
+    color: inherit; 
 }
 
 .columna-izquierda {
@@ -324,6 +346,17 @@
     html, body {
         overflow-x: hidden;
     }
+    
+    .secciones{
+    margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap:0.3em;
+    list-style-type: none;
+    font-size: 0.8rem;
+    font-family: "Irish Grover", cursive;
+    }
+
     .contenido-principal {
         height: auto;
     }

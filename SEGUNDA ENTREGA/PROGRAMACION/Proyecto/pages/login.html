@@ -3,24 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" href="../assets/css/login.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../assets/fonts/InriaSans/InriaSans-Regular.ttf">
+    <link href="../assets/fonts/IrishGrover/IrishGrover-Regular.ttf">
+    <link rel="stylesheet" href="../assets/css/login.css">
+    <link href="../assets/icons/fontawesome-free-7.0.0-web/css/all.css" rel="stylesheet"/>
 </head>
 <body>
+    <header>
         <nav class="barra-navegacion">
-            <a class="logo-sitio" href="../pages/contacto.html">
-            <img src="../assets/img/CodeFlowBlanco.png" alt="Imagotipo de CodeFlow"/>
-            </a>
-        <div class="menu-principal"></div>
-    </nav>
-
+            <div class="logo-sitio">
+                <a class="logo-sitio" href="../pages/contacto.html">
+                    <img src="../assets/img/CodeFlowBlanco.png" alt="Imagotipo de CodeFlow"/>
+                </a>
+            </div>
+            <div class="menu-principal">
+                <ul class="secciones">
+                    <li><a href="../index.html"><i class="fa-solid fa-house"></i>Inicio</a></li>
+                    <li><a href="login.html"><i class="fa-solid fa-right-to-bracket"></i>Iniciar Sesión</a></li>
+                    <li><a href="signup.html"><i class="fa-solid fa-user-plus"></i>Registrarse</a></li>
+                    <li><a href="contacto.html"><i class="fa-solid fa-message"></i>Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
     <section>
         <div class="contendor-formulario">
             <div class="izq">
                 <h1>Iniciar Sesión</h1><br><br>
                 <form action="../assets/php/login.php" method="POST">
                     <label>Usuario:</label>
-                    <input  class="ingresartexto" type="text" name="username" required>
+                    <input class="ingresartexto" type="text" name="username" required>
                     <label>Contraseña:</label>
                     <input class="ingresartexto" type="password" name="password" required>
                     <input class="botoningresar" type="submit" value="Ingresar">

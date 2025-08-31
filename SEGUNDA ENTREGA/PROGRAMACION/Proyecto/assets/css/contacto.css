@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'Inria Sans';
+    src: url('../fonts/InriaSans/InriaSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Irish Grover';
+    src: url('../fonts/IrishGrover/IrishGrover-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,9 +23,11 @@ html, body {
 
 .barra-navegacion {
     display: flex;
-    width: 100%;
+    width: 100vw;
     height: 15vh;
     background-color: #000;
+    color: white;
+    font-family: "Irish Grover", cursive;
 }
 
 .logo-sitio {
@@ -21,6 +37,31 @@ html, body {
     height: 15vh;
 }
 
+.barra-navegacion .menu-principal {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 85vw;
+    height: 15vh;
+}
+
+.barra-navegacion .menu-principal .secciones {
+    margin-right: 2rem;
+    display: flex;
+    align-items: end;
+    gap: 5rem;
+    list-style-type: none;
+    font-size: 1.3rem;
+}
+
+.barra-navegacion .menu-principal .secciones li a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+}
+
 .contenedor-mapa {
     display: flex;
     width: 100vw;
@@ -28,7 +69,6 @@ html, body {
 }
 
 .contenedor-mapa iframe {
-    display: flex;
     width: 100vw;
     height: 42.5vh;
 }
@@ -38,7 +78,7 @@ html, body {
     flex-direction: row;
     align-items: center;
     width: 100vw;
-    height: 42.5%;
+    height: 42.5vh;
 }
 
 .datos-contacto {
@@ -48,7 +88,7 @@ html, body {
     height: 42.5vh;
 }
 
-ul {
+ul.lista-contacto {
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -76,60 +116,50 @@ ul {
     height: 42.5vh;
 }
 
-/* Responsive para tablets y pantallas medianas */
 @media (max-width: 1024px) {
-    .seccion-contacto {
-        flex-direction: row;
-        height: auto;
-    }
-
-    .logo-sitio {
+    .barra-navegacion .logo-sitio {
         width: auto;
         height: auto;
     }
-
+    .barra-navegacion .menu-principal {
+        width: auto;
+    }
+    .barra-navegacion .menu-principal .secciones {
+        gap: 2rem;
+        font-size: 1.1rem;
+    }
+    .seccion-contacto {
+        flex-direction: column;
+        height: auto;
+    }
     .datos-contacto, .logo-empresa {
         width: 100%;
         height: auto;
     }
-
     .logo-empresa img {
         width: 100%;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
+        margin: 2rem 0;
     }
-
-    li {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
+    ul.lista-contacto li {
+        margin: 1rem 0;
     }
 }
 
-/* Responsive para móviles */
 @media (max-width: 480px) {
+
     .seccion-contacto {
-        flex-direction: row;
+        flex-direction: column;
         height: auto;
     }
-
-    .logo-sitio {
-        width: auto;
-        height: auto;
-    }
-
     .datos-contacto, .logo-empresa {
         width: 100%;
         height: auto;
     }
-
     .logo-empresa img {
         width: 100%;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
+        margin: 2rem 0;
     }
-
-    li {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
+    ul.lista-contacto li {
+        margin: 1rem 0;
     }
 }

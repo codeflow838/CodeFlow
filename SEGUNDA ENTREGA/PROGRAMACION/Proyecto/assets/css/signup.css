@@ -1,4 +1,11 @@
 @font-face {
+    font-family: 'Inria Sans';
+    src: url('../fonts/InriaSans/InriaSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'Irish Grover';
     src: url('../fonts/IrishGrover/IrishGrover-Regular.ttf') format('truetype');
     font-weight: normal;
@@ -15,7 +22,7 @@ html, body {
 }
 
 body {
-    font-family: "Irish Grover";
+    font-family: "Irish Grover", cursive;
 }
 
 .barra-navegacion {
@@ -23,6 +30,7 @@ body {
     width: 100vw;
     height: 15vh;
     background-color: #000;
+    color: white;
 }
 
 .logo-sitio {
@@ -30,6 +38,32 @@ body {
     justify-content: center;
     width: 15vw;
     height: 15vh;
+}
+
+.menu-principal {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 85vw;
+    height: 15vh;
+}
+
+.secciones{
+    margin-right: 2rem;
+    display: flex;
+    align-items: end;
+    gap:5rem;
+    list-style-type: none;
+    font-size: 1.3rem;
+    font-family: "Irish Grover", cursive;
+}
+
+.secciones li a{
+    display: flex;
+    align-items: center;
+    gap:0.5rem;
+    text-decoration: none;
+    color: inherit; 
 }
 
 section {
@@ -132,14 +166,20 @@ h1 {
         height: auto;
         background-color: transparent;
     }
-
 }
 
 @media (max-width: 480px) {
 
-    *{
-        margin: 0;
-        padding: 0;
+
+    .contenido-principal {
+        height: auto;
+    }
+    .barra-navegacion {
+        height: 10vh;
+    }
+    .logo-sitio {
+        width: 25vw;
+        height: 10vh;
     }
     .contendor-formulario {
         flex-direction: column;
@@ -163,7 +203,7 @@ h1 {
         background-color: transparent;
     }
 
-        .botoningresar{
+    .botoningresar{
         width: 30vw;
     }
 
