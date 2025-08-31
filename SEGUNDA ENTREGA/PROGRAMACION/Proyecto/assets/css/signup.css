@@ -170,6 +170,19 @@ h1 {
 
 @media (max-width: 480px) {
 
+    html, body {
+        overflow-x: hidden;
+    }
+    
+    .secciones{
+    margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap:0.3em;
+    list-style-type: none;
+    font-size: 0.8rem;
+    font-family: "Irish Grover", cursive;
+    }
 
     .contenido-principal {
         height: auto;
@@ -181,13 +194,32 @@ h1 {
         width: 25vw;
         height: 10vh;
     }
+    .menu-principal {
+        width: 75vw;
+        height: 10vh;
+    }
+
+    section {
+    width: 100vw;
+    height: 90vh;
+    }
+    
+
     .contendor-formulario {
         flex-direction: column;
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100vw;
-        height: 85vh;
+        height: 90vh;
+    }
+
+    .barra-navegacion {
+        height: 10vh;
+    }
+    .logo-sitio {
+        width: 25vw;
+        height: 10vh;
     }
 
     .izq {

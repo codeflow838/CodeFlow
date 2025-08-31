@@ -30,7 +30,7 @@ html, body {
     font-family: "Irish Grover", cursive;
 }
 
-.logo-sitio {
+.barra-navegacion .logo-sitio {
     display: flex;
     justify-content: center;
     width: 15vw;
@@ -42,7 +42,7 @@ html, body {
     align-items: center;
     justify-content: end;
     width: 85vw;
-    height: 15vh;
+    height: 10vh;
 }
 
 .barra-navegacion .menu-principal .secciones {
@@ -147,10 +147,20 @@ ul.lista-contacto {
 
 @media (max-width: 480px) {
 
-    .seccion-contacto {
-        flex-direction: column;
-        height: auto;
+    .secciones{
+    margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap:0.3em;
+    list-style-type: none;
+    font-size: 0.8rem;
+    font-family: "Irish Grover", cursive;
     }
+
+    .barra-navegacion{
+        height: 10vh;
+    }
+
     .datos-contacto, .logo-empresa {
         width: 100%;
         height: auto;
