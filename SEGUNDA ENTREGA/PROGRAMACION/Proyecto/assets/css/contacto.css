@@ -26,40 +26,40 @@ html, body {
     width: 100vw;
     height: 15vh;
     background-color: #000;
-    color: white;
-    font-family: "Irish Grover", cursive;
+    color:white;
 }
 
-.barra-navegacion .logo-sitio {
+.logo-sitio {
     display: flex;
     justify-content: center;
     width: 15vw;
     height: 15vh;
 }
 
-.barra-navegacion .menu-principal {
+.menu-principal {
     display: flex;
     align-items: center;
     justify-content: end;
     width: 85vw;
-    height: 10vh;
+    height: 15vh;
 }
 
-.barra-navegacion .menu-principal .secciones {
+.secciones li a{
+    display: flex;
+    align-items: center;
+    gap:0.5rem;
+    text-decoration: none;
+    color: inherit; 
+}
+
+.secciones{
     margin-right: 2rem;
     display: flex;
     align-items: end;
-    gap: 5rem;
+    gap:5rem;
     list-style-type: none;
     font-size: 1.3rem;
-}
-
-.barra-navegacion .menu-principal .secciones li a {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-    color: inherit;
+    font-family: "Irish Grover", cursive;
 }
 
 .contenedor-mapa {
@@ -146,30 +146,29 @@ ul.lista-contacto {
 }
 
 @media (max-width: 480px) {
-
-    .secciones{
-    margin-right: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap:0.3em;
-    list-style-type: none;
-    font-size: 0.8rem;
-    font-family: "Irish Grover", cursive;
-    }
-
-    .barra-navegacion{
-        height: 10vh;
-    }
-
-    .datos-contacto, .logo-empresa {
-        width: 100%;
+    .menu-principal {
+        width: 75vw;
         height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;  /* 🔑 Permite que los items bajen de línea */
     }
-    .logo-empresa img {
-        width: 100%;
-        margin: 2rem 0;
+
+    .secciones {
+        margin-right: 0.5rem;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;  /* 🔑 Si no entran en una fila, bajan */
+        gap: 0.5rem;
+        list-style-type: none;
+        font-size: 0.75rem;
+        font-family: "Irish Grover", cursive;
     }
-    ul.lista-contacto li {
-        margin: 1rem 0;
+
+    .secciones li {
+        flex: 1 1 auto; /* 🔑 Distribuye mejor el espacio */
+        text-align: center;
     }
 }
+

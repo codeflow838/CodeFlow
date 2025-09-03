@@ -346,31 +346,44 @@
     html, body {
         overflow-x: hidden;
     }
-    
+
+    .menu-principal {
+        width: 75vw;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+
     .secciones{
-    margin-right: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap:0.3em;
-    list-style-type: none;
-    font-size: 0.8rem;
-    font-family: "Irish Grover", cursive;
+        margin-right: 0.5rem;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap:0.5rem;
+        list-style-type: none;
+        font-size: 0.75rem;
+        font-family: "Irish Grover", cursive;
+    }
+
+    .secciones li {
+        flex: 1 1 auto;
+        text-align: center;
     }
 
     .contenido-principal {
         height: auto;
     }
+    
     .barra-navegacion {
-        height: 10vh;
+        height: auto;
+        padding: 0.5rem 0;
     }
-    .logo-sitio {
-        width: 25vw;
-        height: 10vh;
-    }
-    .menu-principal {
-        width: 75vw;
-        height: 10vh;
-    }
+
+    .logo-sitio { 
+    width: 25vw; height: 10vh; 
+}
     .encabezado-juego {
         width: 100%;
     }
