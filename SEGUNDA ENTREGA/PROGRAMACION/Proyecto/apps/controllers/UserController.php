@@ -2,9 +2,6 @@
 session_start();
 require_once '../models/Database.php';
 require_once '../models/User.php';
-require_once '../models/UserModel.php';
-
-$userModel = new UserModel($conn);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
     $action = $_POST['action'];
@@ -14,13 +11,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
         $edad = $_POST['edad'];
         $password = $_POST['password'];
 
-        if ($userModel->userExists($nombre)) {
+        if (User::userExists($conn, $nombre)) {
             header("Location: ../views/usuarioyaexiste.html");
             exit;
         }
 
         $user = new User($nombre, $edad, $password);
-        if ($userModel->register($user)) {
+        if ($user->registrar($conn)) {
             header("Location: ../views/registradoexito.html");
             exit;
         } else {
@@ -31,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
         $nombre = $_POST['usuario'];
         $password = $_POST['password'];
 
-        $user = $userModel->login($nombre, $password);
+        $user = User::login($conn, $nombre, $password);
 
         if ($user instanceof User) {
             $_SESSION['user_id'] = $user->getId();
