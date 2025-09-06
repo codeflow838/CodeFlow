@@ -68,7 +68,7 @@
 .columna-izquierda {
     display: flex;
     flex-direction: column;
-    background: url("../img/Fondo.PNG") no-repeat center;
+    background: url("../images/Fondo.PNG") no-repeat center;
     background-size: cover;
     width: 75vw;
     height: 85vh;

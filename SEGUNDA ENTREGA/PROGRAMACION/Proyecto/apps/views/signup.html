@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <title>Registrarse</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../assets/fonts/InriaSans/InriaSans-Regular.ttf">
-    <link href="../assets/fonts/IrishGrover/IrishGrover-Regular.ttf">
-    <link rel="stylesheet" href="../assets/css/signup.css">
-    <link href="../assets/icons/fontawesome-free-7.0.0-web/css/all.css" rel="stylesheet"/>
+    <link href="../../public/fonts/InriaSans/InriaSans-Regular.ttf">
+    <link href="../../public/fonts/IrishGrover/IrishGrover-Regular.ttf">
+    <link rel="stylesheet" href="../../public/css/signup.css">
+    <link href="../../public/icons/fontawesome-free-7.0.0-web/css/all.css" rel="stylesheet"/>
 </head>
 <body>
     <header>
         <nav class="barra-navegacion">
             <div class="logo-sitio">
-                <a class="logo-sitio" href="../pages/contacto.html">
-                    <img src="../assets/img/CodeFlowBlanco.png" alt="Imagotipo de CodeFlow"/>
+                <a class="logo-sitio" href="../../apps/views/contacto.html">
+                    <img src="../../public/images/CodeFlowBlanco.png" alt="Imagotipo de CodeFlow"/>
                 </a>
             </div>
             <div class="menu-principal">
                 <ul class="secciones">
-                    <li><a href="../index.html"><i class="fa-solid fa-house"></i>Inicio</a></li>
+                    <li><a href="../../public/index.html"><i class="fa-solid fa-house"></i>Inicio</a></li>
                     <li><a href="login.html"><i class="fa-solid fa-right-to-bracket"></i>Iniciar Sesión</a></li>
                     <li><a href="signup.html"><i class="fa-solid fa-user-plus"></i>Registrarse</a></li>
                     <li><a href="contacto.html"><i class="fa-solid fa-message"></i>Contacto</a></li>
@@ -32,7 +32,7 @@
             <div class="izq"></div>
             <div class="der">
                 <h1>Registrarse</h1><br><br>
-                <form action="../assets/php/signup.php" method="POST">
+                <form action="../controllers/signup.php" method="POST">
                     <label>Usuario:</label>
                     <input class="ingresartexto" type="text" name="username" required>
                     <label>Contraseña:</label>

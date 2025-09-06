@@ -79,7 +79,7 @@ section {
     display: flex;
     width: 90vw;
     height: 75vh;
-    background: url(../img/Fondo.PNG) no-repeat center;
+    background: url(../images/Fondo.PNG) no-repeat center;
     background-size: cover;
 }
 
