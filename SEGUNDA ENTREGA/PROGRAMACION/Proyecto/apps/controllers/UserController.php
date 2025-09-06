@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once '../models/Database.php';
-require_once '../models/User.php';
+require_once '../models/Usermodel.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
     $action = $_POST['action'];
