@@ -3,54 +3,75 @@
     padding: 0;
 }
 
-.nav-menu{
-    display: flex;
-    background-color: #FE8A38;
-    justify-content: center;
+header{
     width: 100vw;
-    height: 7.5vh;
-}
-
-.menu{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    color: aliceblue;
-    width: 12.5vw;
-    height: 7.5vh;
+    height: 10vh;
     background-color: black;
 }
 
-section{
+.back{
+    height: 10vh;
+    width: 12.5vw;
+    background-color: darkblue;
+}
+
+main{
     display: flex;
-    flex-direction: column;
+}
+
+#Tablero{
+    display: flex;
+    justify-content: center;
+    width: 80vw;
+    height: 70vh;
+    background-color: mediumorchid;
+}
+
+aside{
+    height: 70vh;
+    width: 20vw;
+    background-color: chocolate;
+}
+
+.Tablero{
+    width: 40vw;
+    height: 70vh;
+    background-color: rgb(79, 117, 117);
+    background-image: url(../images/tableroverano.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+}
+
+#Mano{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
-    height: 92.5vh;
+    height: 20vh;
+    background-color: rgb(129, 184, 255);
 }
 
-.tablero{
+.Mano{
     display: flex;
     justify-content: center;
-    width: 100vw;
-    height: 60vh;
-    background-color: aqua;
+    margin: 1rem;
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+    position: relative;
+    transition: transform 0.3s ease;
 }
 
-.imagen-tablero{
-    display: flex;
-    justify-content: center;
-}
+#dino1{ background-image: url(../images/verde.png); }
+#dino2{ background-image: url(../images/rosado.png); }
+#dino3{ background-image: url(../images/rojo.png); }
+#dino4{ background-image: url(../images/amarillo.png); }
+#dino5{ background-image: url(../images/celeste.png); }
+#dino6{ background-image: url(../images/naranja.png); }
 
-.mano{
-    display: flex;
-    justify-content: center;
-    width: 100vw;
-    height: 32.5vh;
+.Mano:hover{
+    transform: rotate(50deg);
 }
-
-.imagen-mano{
-    display: flex;
-    justify-content: center;
-}
-
