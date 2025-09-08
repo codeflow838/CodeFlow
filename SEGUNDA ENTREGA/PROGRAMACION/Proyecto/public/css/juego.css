@@ -9,11 +9,30 @@ header{
     background-color: black;
 }
 
+nav{
+    display: flex;
+}
+
 .back{
     height: 10vh;
-    width: 12.5vw;
-    background-color: black;
+    width: 33vw;
     color: red;
+}
+
+.menu{
+    display: flex;
+    color: aliceblue;
+    height: 10vh;
+    width: 34vw;
+}
+
+.numerotablero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 6rem;
+    height: 10vh;
+    width: 33vw;
 }
 
 a{
@@ -63,13 +82,24 @@ aside{
     transition: transform 0.3s ease;
 }
 
-#dino1{ background-image: url(../images/verde.png); }
-#dino2{ background-image: url(../images/rosado.png); }
-#dino3{ background-image: url(../images/rojo.png); }
-#dino4{ background-image: url(../images/amarillo.png); }
-#dino5{ background-image: url(../images/celeste.png); }
-#dino6{ background-image: url(../images/naranja.png); }
-
+#dino1{ 
+    background-image: url(../images/verde.png); 
+}
+#dino2{ 
+    background-image: url(../images/rosado.png); 
+}
+#dino3{ 
+    background-image: url(../images/rojo.png); 
+}
+#dino4{ 
+    background-image: url(../images/amarillo.png); 
+}
+#dino5{ 
+    background-image: url(../images/celeste.png); 
+}
+#dino6{ 
+    background-image: url(../images/naranja.png); 
+}   
 .Mano:hover{
     transform: rotate(50deg);
 }
