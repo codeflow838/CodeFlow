@@ -152,14 +152,14 @@ ul.lista-contacto {
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        flex-wrap: wrap;  /* 🔑 Permite que los items bajen de línea */
+        flex-wrap: wrap;  
     }
 
     .secciones {
         margin-right: 0.5rem;
         display: flex;
         align-items: center;
-        flex-wrap: wrap;  /* 🔑 Si no entran en una fila, bajan */
+        flex-wrap: wrap;  
         gap: 0.5rem;
         list-style-type: none;
         font-size: 0.75rem;
@@ -167,7 +167,7 @@ ul.lista-contacto {
     }
 
     .secciones li {
-        flex: 1 1 auto; /* 🔑 Distribuye mejor el espacio */
+        flex: 1 1 auto; 
         text-align: center;
     }
 }
