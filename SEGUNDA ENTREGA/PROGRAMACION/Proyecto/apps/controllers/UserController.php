@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
         }
 
         $user = new User($nombre, $edad, $password);
-        if ($user->registrar($conn)) {
+        if ($user->register($conn)) {
             header("Location: ../views/registradoexito.html");
             exit;
         } else {
