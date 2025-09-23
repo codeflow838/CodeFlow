@@ -76,34 +76,58 @@ footer {
     flex-wrap: wrap;
 }
 
-#seccion1 { background-image: url(../images/verde.png); }
-#seccion2 { background-image: url(../images/rosado.png); }
-#seccion3 { background-image: url(../images/rojo.png); }
-#seccion4 { background-image: url(../images/amarillo.png); }
-#seccion5 { background-image: url(../images/celeste.png); }
-#seccion6 { background-image: url(../images/naranja.png); }
+#seccion1{ 
+    background-image: url(../images/verde.png); 
+}
+#seccion2{ 
+    background-image: url(../images/rosado.png); 
+}
+#seccion3{ 
+    background-image: url(../images/rojo.png); 
+}
+#seccion4{ 
+    background-image: url(../images/amarillo.png); 
+}
+#seccion5 
+{ 
+    background-image: url(../images/celeste.png); 
+}
+#seccion6 
+{ 
+    background-image: url(../images/naranja.png); 
+}
 
 .seccion:hover {
     transform: rotate(25deg);
 }
 
 .tablero {
-    background-color: rgb(248, 188, 188);
+    background-color: rgb(248, 188, 188);   
     background-image: url(../images/tableroverano.jpg);
     width: 582px;
     height: 507px;
 }
 
-#recinto1 {
+#BosqueSemejanza {
     background-color: transparent;
     border: 5px solid black;
     width: 156px;
     height: 118px;
     margin-top: 50px;
     margin-left: 13px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
 }
 
-#recinto2{
+.celda {
+    border-right: 5px solid black; 
+}
+
+.celda:last-child {
+    border-right: none;
+}
+
+#ReySelva{
     background-color: transparent;
     border: 5px solid black;
     width: 155px;
@@ -113,25 +137,29 @@ footer {
     border-radius: 60px;
 }
 
-#recinto3{
+#TrioFrondoso{
     background-color: transparent;
     border: 5px solid black;
     width: 148px;
     height: 128px;
     margin-top: 85px;
     margin-left: 13px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 
-#recinto4{
+#PradoDiferencia{
     background-color: transparent;
     border: 5px solid black;
     width: 151px;
     height: 85px;
     margin-left: 365px;
     margin-top: -88px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
 }
 
-#recinto5{
+#PraderaAmor{
     background-color: transparent;
     border: 5px solid black;
     width: 132px;
@@ -140,7 +168,7 @@ footer {
     margin-left: 64px;
 }
 
-#recinto6{
+#IslaSolitaria{
     background-color: transparent;
     border: 5px solid black;
     width: 161px;
