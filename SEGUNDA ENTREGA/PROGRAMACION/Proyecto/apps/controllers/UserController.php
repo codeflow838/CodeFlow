@@ -3,7 +3,8 @@ session_start();
 require_once '../models/Database.php';
 require_once '../models/Usermodel.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) 
+    {
     $action = $_POST['action'];
 
     if ($action === 'signup') {
@@ -11,12 +12,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
         $edad = $_POST['edad'];
         $password = $_POST['password'];
 
-        if (User::userExists($conn, $nombre)) {
+        $user = new User($nombre, $edad, $password);
+
+        if ($user->exists($conn)) {
             header("Location: ../views/usuarioyaexiste.html");
             exit;
         }
 
-        $user = new User($nombre, $edad, $password);
         if ($user->register($conn)) {
             header("Location: ../views/registradoexito.html");
             exit;
@@ -28,14 +30,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
         $nombre = $_POST['usuario'];
         $password = $_POST['password'];
 
-        $user = User::login($conn, $nombre, $password);
+        $user = new User($nombre, null, $password);
 
-        if ($user instanceof User) {
-            $_SESSION['user_id'] = $user->getId();
-            $_SESSION['nombre'] = $user->getNombre();
+        $loginResult = $user->login($conn);
+
+        if ($loginResult instanceof User) {
+            $_SESSION['user_id'] = $loginResult->getId();
+            $_SESSION['nombre'] = $loginResult->getNombre();
             header("Location: ../views/inicioexitoso.html");
             exit;
-        } elseif ($user === "incorrecta") {
+        } elseif ($loginResult === "incorrecta") {
             header("Location: ../views/incorrecta.html");
             exit;
         } else {

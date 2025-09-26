@@ -42,9 +42,9 @@ class User {
         $this->password = $password;
     }
 
-    public static function userExists($conn, $nombre) {
+    public function exists($conn) {
         $stmt = $conn->prepare("SELECT id FROM usuario WHERE nombre = ?");
-        $stmt->bind_param("s", $nombre);
+        $stmt->bind_param("s", $this->nombre);
         $stmt->execute();
         $stmt->store_result();
         return $stmt->num_rows > 0;
@@ -56,15 +56,19 @@ class User {
         return $stmt->execute();
     }
 
-    public static function login($conn, $nombre, $password) {
+    public function login($conn) {
         $stmt = $conn->prepare("SELECT id, nombre, edad, password FROM usuario WHERE nombre = ?");
-        $stmt->bind_param("s", $nombre);
+        $stmt->bind_param("s", $this->nombre);
         $stmt->execute();
         $result = $stmt->get_result();
 
         if ($data = $result->fetch_assoc()) {
-            if ($data['password'] === $password) {
-                return new User($data['nombre'], $data['edad'], $data['password'], $data['id']);
+            if ($data['password'] === $this->password) {
+                $this->id = $data['id'];
+                $this->nombre = $data['nombre'];
+                $this->edad = $data['edad'];
+                $this->password = $data['password'];
+                return $this;
             } else {
                 return "incorrecta";
             }
