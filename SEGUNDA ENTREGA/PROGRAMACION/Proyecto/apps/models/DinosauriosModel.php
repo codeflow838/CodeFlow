@@ -1,14 +1,10 @@
 <?php
 require_once 'Database.php';
 
-class Dinosaurio {
+class Dinosaurios 
+{
     private $id;
     private $especie;
-
-    public function __construct($especie, $id = null) {
-        $this->id = $id;
-        $this->especie = $especie;
-    }
 
     public function getId() 
     { 
@@ -18,9 +14,19 @@ class Dinosaurio {
     { 
         return $this->especie; 
     }
+
+    public function setId($id) 
+    { 
+        $this->id = $id; 
+    }
     public function setEspecie($especie) 
     { 
         $this->especie = $especie; 
     }
+
+    public function __construct($especie, $id = null) 
+    {
+        $this->id = $id;
+        $this->especie = $especie;
+    }
 }
-?>

@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "draftosaurus_bd";
+$dbname = "bd-codeflow";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {

@@ -1,57 +1,59 @@
 <?php
 require_once 'Database.php';
 
-class Partida {
+class Partida 
+{
     private $id;
     private $id_usuario;
-    private $fecha;
     private $modo;
+    private $fecha;
 
     public function getId() 
     { 
         return $this->id; 
     }
     public function getIdUsuario() 
-    {
+    { 
         return $this->id_usuario; 
-    }
-    public function setIdUsuario($id_usuario) 
-    { 
-        $this->id_usuario = $id_usuario; 
-    }
-    public function getFecha() 
-    { 
-        return $this->fecha; 
-    }
-    public function setFecha($fecha) 
-    { 
-        $this->fecha = $fecha; 
     }
     public function getModo() 
     { 
         return $this->modo; 
     }
+    public function getFecha() 
+    { 
+        return $this->fecha; 
+    }
+
+    public function setId($id) 
+    { 
+        $this->id = $id; 
+    }
+    public function setIdUsuario($id_usuario) 
+    { 
+        $this->id_usuario = $id_usuario; 
+    }
     public function setModo($modo) 
     { 
         $this->modo = $modo; 
     }
-
-    public function __construct($id_usuario, $fecha, $modo, $id = null) {
+    public function setFecha($fecha) 
+    { 
+        $this->fecha = $fecha; 
+    }
+    
+        public function __construct($id_usuario, $modo, $fecha, $id = null)
+    {
         $this->id = $id;
         $this->id_usuario = $id_usuario;
-        $this->fecha = $fecha;
         $this->modo = $modo;
+        $this->fecha = $fecha;
     }
 
-    private function TrioFrondoso($dino1 = "amarillo", $dino2 = "celeste", $dino3 = "rosado") {
-        $puntos = 0;
-        $dinosaurios = array_filter([$dino1, $dino2, $dino3], fn($d) => !empty($d));
-        if (count($dinosaurios) > 3) return 0;
-        if (count($dinosaurios) === 3) $puntos = 7;
-        return $puntos;
-    }
+}
 
-    private function BosqueSemejanza($dinos = ["rojo", "rojo", "rojo", "rojo", "rojo", "rojo"]) {
+    private function BosqueSemejanza($dinos = ["rojo", "rojo", "rojo", "rojo", "rojo", "rojo"]) 
+    {
         $puntos = 0;
         if (count($dinos) > 6) $dinos = array_slice($dinos, 0, 6);
         if (empty($dinos)) return $puntos;
@@ -69,7 +71,8 @@ class Partida {
         return $puntos;
     }
 
-    private function PradoDiferencia($dinos = ["rojo", "amarillo", "celeste", "verde", "rosado", "naranja"]) {
+    private function PradoDiferencia($dinos = ["rojo", "amarillo", "celeste", "verde", "rosado", "naranja"]) 
+    {
         $puntos = 0;
         if (count($dinos) > 6) $dinos = array_slice($dinos, 0, 6);
         if (empty($dinos)) return $puntos;
@@ -90,7 +93,8 @@ class Partida {
         return $puntos;
     }
 
-    private function PraderaAmor($dinos = ["rojo", "rojo"]) {
+    private function PraderaAmor($dinos = ["rojo", "rojo"]) 
+    {
         $puntos = 0;
         if (empty($dinos)) return $puntos;
         $conteoEspecies = array_count_values($dinos);
@@ -101,14 +105,16 @@ class Partida {
         return $puntos;
     }
 
-    private function IslaSolitaria($dino = "rojo", $parque = []) {
+    private function IslaSolitaria($dino = "rojo", $parque = []) 
+    {
         if (empty($dino)) return 0;
         $conteo = 0;
         foreach ($parque as $d) if ($d === $dino) $conteo++;
         return ($conteo === 1) ? 7 : 0;
     }
 
-    private function ReyDeLaSelva($dino = "", $parques = []) {
+    private function ReyDeLaSelva($dino = "", $parques = []) 
+    {
         if (empty($dino)) return 0;
         $miConteo = 0;
         foreach ($parques[0] as $d) if ($d === $dino) $miConteo++;
@@ -120,12 +126,13 @@ class Partida {
         return 7;
     }
 
-    private function Rio($dinos = ["rojo"]) {
+    private function Rio($dinos = ["rojo"]) 
+    {
         if (empty($dinos)) return 0;
         return count($dinos);
     }
 
-    private function PuntajeTotal(
+    public function PuntajeTotal(
         $trioFrondoso = ["", "", ""],
         $bosqueSemejanza = ["", "", "", "", "", ""],
         $pradoDiferencia = ["", "", "", "", "", ""],
@@ -135,7 +142,8 @@ class Partida {
         $reySelva = "",
         $parquesReySelva = [],
         $rio = []
-    ) {
+    ) 
+    {
         $total = 0;
         $total += $this->TrioFrondoso(...$trioFrondoso);
         $total += $this->BosqueSemejanza($bosqueSemejanza);
