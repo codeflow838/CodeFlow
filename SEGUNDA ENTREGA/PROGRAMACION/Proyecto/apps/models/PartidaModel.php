@@ -153,6 +153,5 @@ class Partida
         $total += $this->ReyDeLaSelva($reySelva, $parquesReySelva);
         $total += $this->Rio($rio);
         return $total;
-    }
 }
 ?>
