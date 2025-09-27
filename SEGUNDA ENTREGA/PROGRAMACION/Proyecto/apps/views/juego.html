@@ -13,39 +13,70 @@
         <aside class="cuadradito">RESTRICCIÓN DADO</aside>
         <main class="cuadradito">
             <section class="tablero">
-                <div id="BosqueSemejanza" class="bosque">
-                    <div class="celda"></div>
-                    <div class="celda"></div>
-                    <div class="celda"></div>
-                    <div class="celda"></div>
-                    <div class="celda"></div>
-                    <div class="celda"></div>
-                </div>
-                <div id="ReySelva" class="bosque">
 
-                </div>
-                <div id="TrioFrondoso" class="bosque">
-                    <div class="celda"></div>
-                    <div class="celda"></div>
-                    <div class="celda"></div>
-                </div>
-                <div id="PradoDiferencia" class="piedra">
-                    <div class="celda"></div>
-                    <div class="celda"></div>
-                    <div class="celda"></div>
-                    <div class="celda"></div>
-                    <div class="celda"></div>
-                    <div class="celda"></div>
-                </div>
-                <div id="PraderaAmor" class="piedra">
+                <form action="../controllers/PartidaController.php" method="POST">
+                    <div id="BosqueSemejanza" class="bosque">
+                        <div class="celda"><input type="text" name="BosqueSemejanza[]"></div>
+                        <div class="celda"><input type="text" name="BosqueSemejanza[]"></div>
+                        <div class="celda"><input type="text" name="BosqueSemejanza[]"></div>
+                        <div class="celda"><input type="text" name="BosqueSemejanza[]"></div>
+                        <div class="celda"><input type="text" name="BosqueSemejanza[]"></div>
+                        <div class="celda"><input type="text" name="BosqueSemejanza[]"></div>
+                    </div>
+                </form>
 
-                </div>
-                <div id="IslaSolitaria" class="piedra">
+                <form action="../controllers/PartidaController.php" method="POST">
+                    <div id="ReySelva" class="bosque">
+                        <div class="celda"><input type="text" name="ReySelva[]"></div>
+                    </div>
+                </form>
 
-                </div>
-                <div id="rio" class="piedra" class="bosque">
+                <form action="../controllers/PartidaController.php" method="POST">
+                    <div id="TrioFrondoso" class="bosque">
+                        <div class="celda"><input type="text" name="TrioFrondoso[]"></div>
+                        <div class="celda"><input type="text" name="TrioFrondoso[]"></div>
+                        <div class="celda"><input type="text" name="TrioFrondoso[]"></div>
+                    </div>
+                </form>
 
-                </div>
+                <form action="../controllers/PartidaController.php" method="POST">
+                    <div id="PradoDiferencia" class="piedra">
+                        <div class="celda"><input type="text" name="PradoDiferencia[]"></div>
+                        <div class="celda"><input type="text" name="PradoDiferencia[]"></div>
+                        <div class="celda"><input type="text" name="PradoDiferencia[]"></div>
+                        <div class="celda"><input type="text" name="PradoDiferencia[]"></div>
+                        <div class="celda"><input type="text" name="PradoDiferencia[]"></div>
+                        <div class="celda"><input type="text" name="PradoDiferencia[]"></div>
+                    </div>
+                </form>
+
+                <form action="../controllers/PartidaController.php" method="POST">
+                    <div id="PraderaAmor" class="piedra">
+                        <div class="celda"><input type="text" name="PraderAmor[]"></div>
+                        <div class="celda"><input type="text" name="PraderAmor[]"></div>
+                        <div class="celda"><input type="text" name="PraderAmor[]"></div>
+                        <div class="celda"><input type="text" name="PraderAmor[]"></div>
+                        <div class="celda"><input type="text" name="PraderAmor[]"></div>
+                        <div class="celda"><input type="text" name="PraderAmor[]"></div>
+                    </div>
+                </form>
+
+                <form action="../controllers/PartidaController.php" method="POST">
+                    <div id="IslaSolitaria" class="piedra">
+                        <div class="celda"><input type="text" name="IslaSolitaria[]"></div>
+                    </div>
+                </form>
+
+                <form action="../controllers/PartidaController.php" method="POST">
+                    <div id="rio" class="piedra bosque">
+                        <div class="celda"><input type="text" name="rio[]"></div>
+                        <div class="celda"><input type="text" name="rio[]"></div>
+                        <div class="celda"><input type="text" name="rio[]"></div>
+                        <div class="celda"><input type="text" name="rio[]"></div>
+                        <div class="celda"><input type="text" name="rio[]"></div>
+                    </div>
+                </form>
+
             </section>
         </main>
         <footer class="cuadradito">
