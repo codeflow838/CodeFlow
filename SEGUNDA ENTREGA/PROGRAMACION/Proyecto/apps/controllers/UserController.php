@@ -3,8 +3,10 @@ session_start();
 require_once '../models/Database.php';
 require_once '../models/Usermodel.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) 
-    {
+$db = new Database();
+$conn = $db->getConnection();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
     $action = $_POST['action'];
 
     if ($action === 'signup') {
@@ -29,10 +31,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']))
     } elseif ($action === 'login') {
         $nombre = $_POST['usuario'];
         $password = $_POST['password'];
+        
+        $user = new User($nombre, 0, $password);
 
-        $user = new User($nombre, null, $password);
-
-        $loginResult = $user->login($conn);
+        $loginResult = $user->login($conn, $password);
 
         if ($loginResult instanceof User) {
             $_SESSION['user_id'] = $loginResult->getId();

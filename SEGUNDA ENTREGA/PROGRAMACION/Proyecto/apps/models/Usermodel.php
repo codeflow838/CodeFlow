@@ -1,5 +1,6 @@
 <?php
 require_once 'Database.php';
+
 class User 
 {
     private $id;
@@ -39,7 +40,7 @@ class User
 
     public function setPassword($password) 
     { 
-        $this->password = $password; 
+        $this->password = password_hash($password, PASSWORD_DEFAULT);
     }
 
     public function setEdad($edad) 
@@ -51,8 +52,8 @@ class User
     {
         $this->id = $id;
         $this->nombre = $nombre;
-        $this->password = $password;
         $this->edad = $edad;
+        $this->password = password_hash($password, PASSWORD_DEFAULT);
     }
 
     public function exists($conn) 
@@ -71,7 +72,7 @@ class User
         return $stmt->execute();
     }
 
-    public function login($conn) 
+    public function login($conn, $passwordInput) 
     {
         $stmt = $conn->prepare("SELECT id, nombre, edad, password FROM usuario WHERE nombre = ?");
         $stmt->bind_param("s", $this->nombre);
@@ -80,7 +81,8 @@ class User
 
         if ($data = $result->fetch_assoc()) 
         {
-            if ($data['password'] === $this->password) 
+
+            if (password_verify($passwordInput, $data['password'])) 
             {
                 $this->id = $data['id'];
                 $this->nombre = $data['nombre'];
@@ -88,7 +90,7 @@ class User
                 $this->password = $data['password'];
                 return $this;
             } 
-            else 
+                else 
             {
                 return "incorrecta";
             }

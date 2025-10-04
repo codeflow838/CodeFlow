@@ -1,11 +1,16 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "bd-codeflow";
+class Database {
+    private $host = "localhost";
+    private $user = "root";
+    private $pass = "";
+    private $dbname = "bd_codeflow";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
+    public function getConnection() {
+        $conn = new mysqli($this->host, $this->user, $this->pass, $this->dbname);
+        if ($conn->connect_error) {
+            die("Conexión fallida: " . $conn->connect_error);
+        }
+        return $conn;
+    }
 }
 ?>
