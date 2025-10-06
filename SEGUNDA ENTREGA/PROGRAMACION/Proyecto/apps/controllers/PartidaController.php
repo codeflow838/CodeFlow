@@ -5,20 +5,21 @@ require_once '../models/PartidaModel.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $tablero = [
-        "BosqueSemejanza" => isset($_POST['BosqueSemejanza']) ? $_POST['BosqueSemejanza'] : [],
-        "ReySelva" => isset($_POST['ReySelva']) ? $_POST['ReySelva'] : [],
-        "TrioFrondoso" => isset($_POST['TrioFrondoso']) ? $_POST['TrioFrondoso'] : [],
-        "PradoDiferencia" => isset($_POST['PradoDiferencia']) ? $_POST['PradoDiferencia'] : [],
-        "PraderaAmor" => isset($_POST['PraderAmor']) ? $_POST['PraderAmor'] : [],
-        "IslaSolitaria" => isset($_POST['IslaSolitaria']) ? $_POST['IslaSolitaria'] : [],
-        "Rio" => isset($_POST['rio']) ? $_POST['rio'] : []
+        "BosqueSemejanza" => $_POST['BosqueSemejanza'] ?? [],
+        "ReySelva" => $_POST['ReySelva'] ?? [],
+        "TrioFrondoso" => $_POST['TrioFrondoso'] ?? [],
+        "PradoDiferencia" => $_POST['PradoDiferencia'] ?? [],
+        "PraderaAmor" => $_POST['PraderaAmor'] ?? $_POST['PraderAmor'] ?? [],
+        "IslaSolitaria" => $_POST['IslaSolitaria'] ?? [],
+        "Rio" => $_POST['rio'] ?? []
     ];
 
-    $partida = new Partida($_SESSION['user_id'], "seguimiento", date("Y-m-d H:i:s"));
-    $total = $partida->PuntajeTotal($tablero);
+    $user_id = $_SESSION['user_id'] ?? null;
+    if (!$user_id) { echo "Usuario no identificado"; exit; }
 
-    $_SESSION['puntaje'] = $total;
+    $partida = new Partida($user_id, "seguimiento", date("Y-m-d H:i:s"));
     $_SESSION['tablero'] = $tablero;
+    $_SESSION['puntaje'] = $partida->PuntajeTotal($tablero);
 
     header("Location: ../views/resultadopartida.php");
     exit;
