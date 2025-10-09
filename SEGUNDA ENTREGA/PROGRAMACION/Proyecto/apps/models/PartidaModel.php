@@ -68,10 +68,17 @@ class Partida
         return $puntos;
     }
 
-    public function TrioFrondoso($d1,$d2,$d3)
+    public function TrioFrondoso($d1, $d2, $d3)
     {
-        $dinos = array_filter([$d1,$d2,$d3], fn($d)=>!empty($d));
-        return count($dinos) === 3 ? 7 : 0;
+        $dinos = array_filter([$d1, $d2, $d3], fn($d) => !empty($d));
+        if (count($dinos) === 3) 
+        {
+        return 7;
+        } 
+            else 
+        {
+        return 0;
+        }
     }
 
     public function IslaSolitaria($dino, $parque)
