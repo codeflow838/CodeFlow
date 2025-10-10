@@ -6,7 +6,8 @@ require_once '../models/Usermodel.php';
 $db = new Database();
 $conn = $db->getConnection();
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) 
+{
     $action = $_POST['action'];
 
     if ($action === 'signup') {

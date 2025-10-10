@@ -25,7 +25,7 @@ class Partida
     public function setModo($modo) { $this->modo = $modo; }
     public function setFecha($fecha) { $this->fecha = $fecha; }
 
-    public function BosqueSemejanza($dinos)
+    private function BosqueSemejanza($dinos)
     {
         $dinos = array_filter($dinos, fn($d) => !empty($d));
         if (empty($dinos)) return 0;
@@ -42,7 +42,7 @@ class Partida
         return 0;
     }
 
-    public function PradoDiferencia($dinos)
+    private function PradoDiferencia($dinos)
     {
         $dinos = array_filter($dinos, fn($d) => !empty($d));
         if (empty($dinos)) return 0;
@@ -58,7 +58,7 @@ class Partida
         return 0;
     }
 
-    public function PraderaAmor($dinos)
+    private function PraderaAmor($dinos)
     {
         $dinos = array_filter($dinos, fn($d) => !empty($d));
         if (empty($dinos)) return 0;
@@ -68,7 +68,7 @@ class Partida
         return $puntos;
     }
 
-    public function TrioFrondoso($d1, $d2, $d3)
+    private function TrioFrondoso($d1, $d2, $d3)
     {
         $dinos = array_filter([$d1, $d2, $d3], fn($d) => !empty($d));
         if (count($dinos) === 3) 
@@ -81,7 +81,7 @@ class Partida
         }
     }
 
-    public function IslaSolitaria($dino, $parque)
+    private function IslaSolitaria($dino, $parque)
     {
         if (empty($dino)) return 0;
         $conteo = 0;
@@ -89,7 +89,7 @@ class Partida
         return ($conteo === 1) ? 7 : 0;
     }
 
-    public function ReyDeLaSelva($dino, $parques)
+    private function ReyDeLaSelva($dino, $parques)
     {
         if (empty($dino)) return 0;
         $miConteo = count(array_filter($parques[0], fn($d)=>$d===$dino));
@@ -100,7 +100,7 @@ class Partida
         return 7;
     }
 
-    public function Rio($dinos)
+    private function Rio($dinos)
     {
         $dinos = array_filter($dinos, fn($d)=>!empty($d));
         return count($dinos);
