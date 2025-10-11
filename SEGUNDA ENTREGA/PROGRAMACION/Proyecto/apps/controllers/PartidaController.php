@@ -3,80 +3,36 @@ session_start();
 require_once '../models/Database.php';
 require_once '../models/PartidaModel.php';
 
-// Conexión a la base de datos
 $db = new Database();
 $conn = $db->getConnection();
 
-// Obtener todos los usuarios registrados
-$stmt = $conn->prepare("SELECT nombre FROM usuario");
-$stmt->execute();
-$result = $stmt->get_result();
-$usuarios = [];
-while ($row = $result->fetch_assoc()) {
-    $usuarios[] = $row['nombre'];
-}
-$_SESSION['usuarios'] = $usuarios;
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'crear_partida') {
 
-// Comprobar que hay al menos 5 usuarios para poder iniciar la partida
-if (count($usuarios) < 5) {
-    die("Se necesitan al menos 5 usuarios registrados para crear la partida.");
-}
+    $id_usuario = $_SESSION['user_id'];
+    $modo = $_POST['modo'] ?? 'seguimiento';
+    $fecha = date('Y-m-d');
+    $cantidad_jugadores = intval($_POST['cantidad_jugadores'] ?? 2);
 
-// Comprobar que hay un usuario logueado
-$user_id = $_SESSION['user_id'] ?? null;
-if (!$user_id) {
-    header("Location: ../views/noencontrado.html");
-    exit;
-}
+    if ($modo === 'digital' || $modo === 'seguimiento') {
+        $partida = new Partida($id_usuario, $modo, $fecha, $cantidad_jugadores);
+        if ($partida->save($conn)) {
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-    // Recintos
-    $recintos = [
-        "BosqueSemejanza",
-        "ReySelva",
-        "TrioFrondoso",
-        "PradoDiferencia",
-        "PraderaAmor",
-        "IslaSolitaria",
-        "Rio"
-    ];
-
-    $puntajesTotales = [];
-
-    // Recorremos cada jugador (cada formulario enviado)
-    foreach ($usuarios as $jugadorIndex => $nombreJugador) {
-
-        $tableroJugador = [];
-
-        // Recorremos cada recinto
-        foreach ($recintos as $recinto) {
-            if (isset($_POST[$recinto][$jugadorIndex])) {
-                // Los valores vienen como string separados por comas, los convertimos en array
-                $tableroJugador[$recinto] = explode(',', $_POST[$recinto][$jugadorIndex]);
-            } else {
-                $tableroJugador[$recinto] = [];
+            switch ($cantidad_jugadores) {
+                case 2:
+                    include '../views/juegocalculadora2.php';
+                    break;
+                case 3:
+                    include '../views/juegocalculadora3.php';
+                    break;
+                case 4:
+                    include '../views/juegocalculadora4.php';
+                    break;
+                case 5:
+                    include '../views/juegocalculadora5.php';
+                    break;
             }
+
         }
-
-        // Guardamos el tablero del jugador en sesión (opcional)
-        $_SESSION['tablero'][$jugadorIndex] = $tableroJugador;
-
-        // Calculamos el puntaje total del jugador
-        $partida = new Partida($user_id, "seguimiento", date("Y-m-d H:i:s"));
-        $puntajeTotal = $partida->PuntajeTotal($tableroJugador);
-
-        // Solo nos interesa el total
-        $puntajesTotales[$nombreJugador] = $puntajeTotal['Total'] ?? 0;
     }
-
-    // Guardamos los puntajes totales en sesión
-    $_SESSION['puntajesTotales'] = $puntajesTotales;
-
-    // Redirigimos a la vista de resultados
-    header("Location: ../views/resultadopartida.php");
-    exit;
 }
-
-// Incluir la vista del juego si no es POST
-include '../views/juegocalculadora.php';
+?>
