@@ -175,7 +175,7 @@ footer {
 }
 
 .calcularpuntos {
-    background-color: black;
+        background-color: black;
     color: white;
     width: 20vw;
     height: 10vh;
@@ -204,10 +204,6 @@ footer {
     display: none;
 }
 
-.tablero.activo {
-    display: block;
-}
-
 @media (max-width: 480px) {
     #contenedor {
         width: 100%;
@@ -232,7 +228,6 @@ footer {
 
     #BosqueSemejanza {
         background-color: transparent;
-        border: 5px solid black;
         width: 111px;
         height: 79px;
         margin-top: 30px;
@@ -243,7 +238,6 @@ footer {
 
     #ReySelva {
         background-color: transparent;
-        border: 5px solid black;
         width: 98px;
         height: 62px;
         margin-left: 216px;
@@ -262,7 +256,6 @@ footer {
 
     #TrioFrondoso {
         background-color: transparent;
-        border: 5px solid black;
         width: 98px;
         height: 84px;
         margin-top: 59px;
@@ -273,7 +266,6 @@ footer {
 
     #PradoDiferencia {
         background-color: transparent;
-        border: 5px solid black;
         width: 102px;
         height: 61px;
         margin-left: 236px;
@@ -284,7 +276,6 @@ footer {
 
     #PraderaAmor {
         background-color: transparent;
-        border: 5px solid black;
         width: 92px;
         height: 80px;
         margin-top: 22px;
@@ -295,7 +286,6 @@ footer {
 
     #IslaSolitaria {
         background-color: transparent;
-        border: 5px solid black;
         width: 104px;
         height: 53px;
         margin-left: 275px;
@@ -320,7 +310,6 @@ footer {
     #rio .celda {
         display: grid;
         grid-template-columns: repeat(1, 5fr);
-        border: 1px solid black; 
         background-color: transparent;
     }
 }

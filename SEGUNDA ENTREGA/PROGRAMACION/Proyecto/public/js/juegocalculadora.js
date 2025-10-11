@@ -1,68 +1,44 @@
-// ---------------------- Variables ----------------------
-const tableros = document.querySelectorAll('.tablero');
-const btnIzq = document.querySelector('button.izq');
-const btnDer = document.querySelector('button.der');
-const indicador = document.querySelector('nav div');
-const headerJugador = document.querySelector('header.cuadradito');
+document.addEventListener("DOMContentLoaded", () => {
+    const colores = ["transparent", "#fbce03", "#03b1e4", "#ff6b04", "#e9072d", "#e37cd1", "#6abe4c"];
+    const dinos = ["", "amarillo", "celeste", "naranja", "rojo", "rosado", "verde"];
+    const tableros = document.querySelectorAll("section.tablero");
+    const totalTableros = tableros.length;
+    const btnIzq = document.querySelector("nav button.izq");
+    const btnDer = document.querySelector("nav button.der");
+    const marcador = document.querySelector("nav div");
+    let tableroActivo = 0;
 
-let indiceActual = 0;
-
-// ---------------------- Función para mostrar tablero ----------------------
-function mostrarTablero(indice) {
-    tableros.forEach((tablero, i) => {
-        tablero.style.display = (i === indice) ? "block" : "none";
-    });
-    indicador.textContent = `${indice + 1}/${tableros.length}`;
-    headerJugador.textContent = `Tablero de: ${usuarios[indice] || "Jugador Desconocido"}`;
-}
-
-// Inicializar mostrando el primer tablero
-mostrarTablero(indiceActual);
-
-// ---------------------- Navegación de tableros ----------------------
-btnDer.addEventListener('click', () => {
-    indiceActual = (indiceActual + 1) % tableros.length;
-    mostrarTablero(indiceActual);
-});
-
-btnIzq.addEventListener('click', () => {
-    indiceActual = (indiceActual - 1 + tableros.length) % tableros.length;
-    mostrarTablero(indiceActual);
-});
-
-// ---------------------- Colores y dinos ----------------------
-const botones = document.querySelectorAll('.celda input[type="button"]');
-const colores = ["transparent","#fbce03","#03b1e4","#ff6b04","#e9072d","#e37cd1","#6abe4c"];
-const dinos = ["","amarillo","celeste","naranja","rojo","rosado","verde"];
-
-botones.forEach(btn => {
-    let index = 0;
-    btn.addEventListener("click", () => {
-        index = (index + 1) % colores.length;
-        btn.style.backgroundColor = colores[index];
-        btn.dataset.dino = dinos[index];
-    });
-});
-
-// ---------------------- Preparar formulario para enviar datos ----------------------
-tableros.forEach(tablero => {
-    const form = tablero.querySelector('form');
-
-    form.addEventListener('submit', e => {
-        e.preventDefault(); // Evitar envío estándar, vamos a actualizar los inputs hidden
-
-        const inputsBotones = tablero.querySelectorAll('.celda input[type="button"]');
-        inputsBotones.forEach(btn => {
-            let hidden = btn.nextElementSibling;
-            if (!hidden || hidden.type !== 'hidden') {
-                hidden = document.createElement('input');
-                hidden.type = 'hidden';
-                hidden.name = btn.name;
-                btn.after(hidden);
-            }
-            hidden.value = btn.dataset.dino || "";
+    const mostrarTablero = (index) => {
+        tableros.forEach((tablero, i) => {
+            tablero.style.display = i === index ? "block" : "none";
         });
+        marcador.textContent = `${index + 1}/${totalTableros}`;
+    };
 
-        form.submit(); // Enviar formulario actualizado
+    const cambiarTablero = (direccion) => {
+        if (direccion === "der") {
+            tableroActivo = (tableroActivo + 1) % totalTableros;
+        } else if (direccion === "izq") {
+            tableroActivo = (tableroActivo - 1 + totalTableros) % totalTableros;
+        }
+        mostrarTablero(tableroActivo);
+    };
+
+    const manejarClickColor = (boton) => {
+        let index = parseInt(boton.dataset.colorIndex || "0");
+        index = (index + 1) % colores.length;
+        boton.style.backgroundColor = colores[index];
+        boton.dataset.colorIndex = index;
+        boton.dataset.colorName = dinos[index];
+    };
+
+    const botones = document.querySelectorAll('input[type="button"]');
+    botones.forEach((boton) => {
+        boton.dataset.colorIndex = "0";
+        boton.addEventListener("click", () => manejarClickColor(boton));
     });
+
+    btnIzq.addEventListener("click", () => cambiarTablero("izq"));
+    btnDer.addEventListener("click", () => cambiarTablero("der"));
+    mostrarTablero(tableroActivo);
 });

@@ -55,7 +55,7 @@ section{
     height: 10.625vh;
 }
 
-.IniciarSesión {
+.volver {
     color: white;
     display: flex;
     align-items: center;
@@ -77,7 +77,7 @@ section{
     height: 10.625vh;
     }
 
-    .IniciarSesión {
+    .volver {
     color: white;
     display: flex;
     align-items: center;
@@ -102,7 +102,7 @@ section{
     width: 100vw;
     height: 10.625vh;
     }
-    .IniciarSesión {
+    .volver {
     color: white;
     display: flex;
     align-items: center;
