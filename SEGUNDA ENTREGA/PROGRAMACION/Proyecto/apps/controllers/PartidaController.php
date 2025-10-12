@@ -8,7 +8,13 @@ $conn = $db->getConnection();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'crear_partida') {
     
-    $id_usuario = $_SESSION['user_id'];
+    if (!isset($_SESSION['user_id']) || empty($_SESSION['user_id'])) 
+    {
+    include '../views/debesiniciarsesion.html';
+    exit;
+    }
+
+
     $modo = $_POST['modo'] ?? 'seguimiento';
     $fecha = date('Y-m-d');
     $cantidad_jugadores = intval($_POST['cantidad_jugadores'] ?? 2);
@@ -16,9 +22,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     switch ($modo) {
         case 'digital':
         case 'seguimiento':
+            $id_usuario = $_SESSION['user_id'];
             $partida = new Partida($id_usuario, $modo, $fecha, $cantidad_jugadores);
             if ($partida->save($conn)) {
-                switch ($cantidad_jugadores) {
+                switch ($cantidad_jugadores) 
+                {
                     case 2:
                         include '../views/juegocalculadora2.php';
                         break;
