@@ -120,21 +120,24 @@ class Partida
         return $puntos;
     }
 
-    private function IslaSolitaria($dinos)
+    private function IslaSolitaria($dino = "", $parques = []) 
     {
-        $dinos = array_filter($dinos, fn($d)=>!empty($d));
-        $conteo = array_count_values($dinos);
-        $puntos = 0;
-        foreach ($conteo as $c) if ($c === 1) $puntos += 7;
-        return $puntos;
+    if (empty($dino)) return 0;
+        $conteo = 0;
+        foreach ($parque as $d) 
+        {
+        if ($d === $dino) $conteo++;
+        }
+        return ($conteo === 1) ? 7 : 0;
     }
 
-    private function ReyDeLaSelva($dinos, $parques)
-    {
-        if (empty($dinos)) return 0;
-        $miConteo = count(array_filter($parques[0], fn($d)=>in_array($d,$dinos)));
-        for ($i=1;$i<count($parques);$i++) {
-            $conteoOponente = count(array_filter($parques[$i], fn($d)=>in_array($d,$dinos)));
+    private function ReyDeLaSelva($dino = "", $parques = []) {
+        if (empty($dino)) return 0;
+        $miConteo = 0;
+        foreach ($parques[0] as $d) if ($d === $dino) $miConteo++;
+        for ($i = 1; $i < count($parques); $i++) {
+            $conteoOponente = 0;
+            foreach ($parques[$i] as $d) if ($d === $dino) $conteoOponente++;
             if ($conteoOponente > $miConteo) return 0;
         }
         return 7;
@@ -142,7 +145,8 @@ class Partida
 
     private function Rio($dinos)
     {
-        return count(array_filter($dinos, fn($d)=>!empty($d)));
+        $dinos = array_filter($dinos, fn($d) => !empty($d));
+        return count($dinos);
     }
 
     public function PuntajeTotal($tablero)
