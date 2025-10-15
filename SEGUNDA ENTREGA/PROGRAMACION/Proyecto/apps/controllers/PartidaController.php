@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../models/Database.php';
+require_once '../models/Usermodel.php';
 require_once '../models/PartidaModel.php';
 
 $db = new Database();
@@ -18,6 +18,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     $modo = $_POST['modo'] ?? 'seguimiento';
     $fecha = date('Y-m-d');
     $cantidad_jugadores = intval($_POST['cantidad_jugadores'] ?? 2);
+
+    $totalUsuarios = User::contarUsuarios($conn);
+
+    if ($totalUsuarios < $cantidad_jugadores) {
+        include '../views/errorjugadoresregistrados.html';
+        exit;
+    }
 
     switch ($modo) {
         case 'digital':

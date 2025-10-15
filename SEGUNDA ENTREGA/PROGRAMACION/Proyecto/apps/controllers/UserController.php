@@ -1,6 +1,5 @@
 <?php
 session_start();
-require_once '../models/Database.php';
 require_once '../models/Usermodel.php';
 
 $db = new Database();

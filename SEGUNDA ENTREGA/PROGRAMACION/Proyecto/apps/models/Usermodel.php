@@ -97,5 +97,14 @@ class User
         }
         return false;
     }
+
+    public static function contarUsuarios($conn)
+    {
+    $stmt = $conn->prepare("SELECT COUNT(*) AS total FROM usuario");
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+    return intval($row['total']);
+    }
 }
 ?>
