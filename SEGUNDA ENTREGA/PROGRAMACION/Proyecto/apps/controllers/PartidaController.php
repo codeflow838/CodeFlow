@@ -11,9 +11,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
 
     $action = $_POST['action'];
 
-    // =============================
-    // CREAR PARTIDA
-    // =============================
     if ($action === 'crear_partida') {
 
         if (!isset($_SESSION['user_id']) || empty($_SESSION['user_id'])) {
@@ -25,7 +22,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
         $fecha = date('Y-m-d');
         $cantidad_jugadores = intval($_POST['cantidad_jugadores'] ?? 2);
 
-        // Contar usuarios registrados
         $totalUsuarios = User::contarUsuarios($conn);
 
         if ($totalUsuarios < $cantidad_jugadores) {
@@ -59,33 +55,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
 
     }
 
-    // =============================
-    // CALCULAR PUNTOS
-    // =============================
     elseif ($action === 'calcular_puntos') {
 
-        $tablerosPOST = $_POST['tableros']; // Array de tableros por usuario
+        $tablerosPOST = $_POST['tableros']; 
         $puntajes = [];
 
         foreach ($tablerosPOST as $id_usuario => $tablero) {
-            // Crear instancia de Partida (solo para calcular puntaje)
             $partida = new Partida($id_usuario, 'seguimiento', date('Y-m-d'));
+            $puntaje_total = $partida->PuntajeTotal($tablero);
 
-            // Puntaje total por usuario
-            $puntajes[$id_usuario] = $partida->PuntajeTotal($tablero);
+            $usuario = User::obtenerPorId($conn, $id_usuario);
+            $nombre_usuario = $usuario ? $usuario->getNombre() : "Jugador $id_usuario";
+
+            $puntajes[$nombre_usuario] = $puntaje_total;
         }
 
-        // Guardamos puntajes en sesión para enviarlos a la vista
         $_SESSION['puntajes'] = $puntajes;
 
-        // Redirigimos a la vista de resultados
         header("Location: ../views/resultadospartida.php");
         exit;
     }
 
-    // =============================
-    // ACCIONES NO RECONOCIDAS
-    // =============================
     else {
         echo "Acción no válida.";
         exit;

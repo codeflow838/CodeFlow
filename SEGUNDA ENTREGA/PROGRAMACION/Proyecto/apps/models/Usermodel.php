@@ -106,5 +106,19 @@ class User
     $row = $result->fetch_assoc();
     return intval($row['total']);
     }
+
+    public static function obtenerPorId($conn, $id)
+    {
+    $stmt = $conn->prepare("SELECT id, nombre, edad, password FROM usuario WHERE id = ?");
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($data = $result->fetch_assoc()) {
+        $usuario = new User($data['nombre'], $data['edad'], $data['password'], $data['id']);
+        return $usuario;
+    }
+    return null;
+    }   
 }
 ?>
