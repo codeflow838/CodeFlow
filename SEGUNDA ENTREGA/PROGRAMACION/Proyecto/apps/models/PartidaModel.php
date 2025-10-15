@@ -36,9 +36,8 @@ class Partida
     }
     public function getTableros() 
     { 
-        return $this->tableros; 
+        return $this->tableros;
     }
-
     public function setId($id) 
     { 
         $this->id = $id; 
@@ -64,8 +63,8 @@ class Partida
                 'BosqueSemejanza'  => array_fill(0, 6, ''),
                 'PradoDiferencia'  => array_fill(0, 6, ''),
                 'PraderaAmor'      => array_fill(0, 6, ''),
-                'IslaSolitaria'    => array_fill(0, 6, ''),
-                'ReySelva'         => array_fill(0, 6, ''),
+                'IslaSolitaria'    => array_fill(0, 1, ''),
+                'ReySelva'         => array_fill(0, 1, ''),
                 'Rio'              => array_fill(0, 6, '')
             ];
         }
@@ -120,26 +119,41 @@ class Partida
         return $puntos;
     }
 
-    private function IslaSolitaria($dino = "", $parques = []) 
+    private function IslaSolitaria($dino = "", $tablero = [])
     {
-    if (empty($dino)) return 0;
+        if (empty($dino) || empty($tablero)) return 0;
         $conteo = 0;
-        foreach ($parque as $d) 
-        {
-        if ($d === $dino) $conteo++;
+        foreach ($tablero as $recinto) {
+            foreach ($recinto as $d) {
+                if ($d === $dino) $conteo++;
+            }
         }
         return ($conteo === 1) ? 7 : 0;
     }
 
-    private function ReyDeLaSelva($dino = "", $parques = []) {
-        if (empty($dino)) return 0;
+    private function ReyDeLaSelva($dino = "", $parques = [])
+    {
+        if (empty($dino) || empty($parques)) return 0;
+
+        $miParque = $parques[0];
         $miConteo = 0;
-        foreach ($parques[0] as $d) if ($d === $dino) $miConteo++;
+
+        foreach ($miParque as $recinto) {
+            foreach ($recinto as $d) {
+                if ($d === $dino) $miConteo++;
+            }
+        }
+
         for ($i = 1; $i < count($parques); $i++) {
             $conteoOponente = 0;
-            foreach ($parques[$i] as $d) if ($d === $dino) $conteoOponente++;
+            foreach ($parques[$i] as $recinto) {
+                foreach ($recinto as $d) {
+                    if ($d === $dino) $conteoOponente++;
+                }
+            }
             if ($conteoOponente > $miConteo) return 0;
         }
+
         return 7;
     }
 
@@ -149,24 +163,32 @@ class Partida
         return count($dinos);
     }
 
-    public function PuntajeTotal($tablero)
+    public function PuntajeTotal($tablero = null)
     {
+        if ($tablero === null) {
+            $tablero = $this->tableros[0];
+        }
+
         $total = 0;
+
         $total += $this->TrioFrondoso($tablero['TrioFrondoso'] ?? []);
         $total += $this->BosqueSemejanza($tablero['BosqueSemejanza'] ?? []);
         $total += $this->PradoDiferencia($tablero['PradoDiferencia'] ?? []);
         $total += $this->PraderaAmor($tablero['PraderaAmor'] ?? []);
-        $total += $this->IslaSolitaria($tablero['IslaSolitaria'] ?? []);
-        $total += $this->ReyDeLaSelva($tablero['ReySelva'] ?? [], [$tablero['ReySelva'] ?? []]);
+
+        $total += $this->IslaSolitaria($tablero['IslaSolitaria'][0] ?? "", $tablero);
+
+        $total += $this->ReyDeLaSelva($tablero['ReySelva'][0] ?? "", $this->tableros);
+
         $total += $this->Rio($tablero['Rio'] ?? []);
+
         return $total;
     }
 
+
     public function save($conn)
     {
-        $stmt = $conn->prepare("INSERT INTO Partida (ID_usuario, Modo, Fecha) VALUES (?, ?, ?)");
-        if (!$stmt) return false;
-
+        $stmt = $conn->prepare("INSERT INTO partida (id_usuario, modo, fecha) VALUES (?, ?, ?)");
         $stmt->bind_param("iss", $this->id_usuario, $this->modo, $this->fecha);
 
         if ($stmt->execute()) {
