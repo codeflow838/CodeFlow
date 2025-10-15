@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Obtener puntajes de la sesión
 $puntajes = $_SESSION['puntajes'] ?? [];
 ?>
 
@@ -56,7 +55,7 @@ $puntajes = $_SESSION['puntajes'] ?? [];
     <?php if (!empty($puntajes)): ?>
         <table>
             <tr>
-                <th>Jugador (ID)</th>
+                <th>Jugador</th>
                 <th>Puntaje Total</th>
             </tr>
             <?php foreach($puntajes as $id_usuario => $puntos): ?>

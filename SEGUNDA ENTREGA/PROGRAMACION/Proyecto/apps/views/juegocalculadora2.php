@@ -17,275 +17,275 @@
         <main class="cuadradito">
     <form action="../controllers/PartidaController.php" method="POST" id="formPartida">
 
-    <section class="tablero" data-jugador="1">
+    <section class="tablero" data-jugador="<?= $jugadores[0] ?>">
 
         <div id="BosqueSemejanza" class="bosque">
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[1][BosqueSemejanza][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[0] ?>][BosqueSemejanza][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[1][BosqueSemejanza][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[0] ?>][BosqueSemejanza][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[1][BosqueSemejanza][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[0] ?>][BosqueSemejanza][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[1][BosqueSemejanza][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[0] ?>][BosqueSemejanza][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[1][BosqueSemejanza][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[0] ?>][BosqueSemejanza][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[1][BosqueSemejanza][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[0] ?>][BosqueSemejanza][]" value="">
             </div>
         </div>
 
         <div id="ReySelva" class="bosque">
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[1][ReySelva][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[0] ?>][ReySelva][]" value="">
             </div>
         </div>
 
         <div id="TrioFrondoso" class="bosque">
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[1][TrioFrondoso][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[0] ?>][TrioFrondoso][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[1][TrioFrondoso][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[0] ?>][TrioFrondoso][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[1][TrioFrondoso][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[0] ?>][TrioFrondoso][]" value="">
             </div>
         </div>
 
         <div id="PradoDiferencia" class="piedra">
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[1][PradoDiferencia][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[0] ?>][PradoDiferencia][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[1][PradoDiferencia][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[0] ?>][PradoDiferencia][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[1][PradoDiferencia][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[0] ?>][PradoDiferencia][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[1][PradoDiferencia][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[0] ?>][PradoDiferencia][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[1][PradoDiferencia][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[0] ?>][PradoDiferencia][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[1][PradoDiferencia][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[0] ?>][PradoDiferencia][]" value="">
             </div>
         </div>
 
         <div id="PraderaAmor" class="piedra">
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[1][PraderaAmor][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[0] ?>][PraderaAmor][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[1][PraderaAmor][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[0] ?>][PraderaAmor][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[1][PraderaAmor][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[0] ?>][PraderaAmor][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[1][PraderaAmor][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[0] ?>][PraderaAmor][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[1][PraderaAmor][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[0] ?>][PraderaAmor][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[1][PraderaAmor][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[0] ?>][PraderaAmor][]" value="">
             </div>
         </div>
 
         <div id="IslaSolitaria" class="piedra">
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[1][IslaSolitaria][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[0] ?>][IslaSolitaria][]" value="">
             </div>
         </div>
 
         <div id="Rio" class="piedra bosque">
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[1][Rio][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[0] ?>][Rio][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[1][Rio][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[0] ?>][Rio][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[1][Rio][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[0] ?>][Rio][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[1][Rio][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[0] ?>][Rio][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[1][Rio][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[0] ?>][Rio][]" value="">
             </div>
         </div>
 </section>
 
 
-    <section class="tablero" data-jugador="2">
+    <section class="tablero" data-jugador="<?= $jugadores[1] ?>">
 
         <div id="BosqueSemejanza" class="bosque">
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[2][BosqueSemejanza][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[1] ?>][BosqueSemejanza][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[2][BosqueSemejanza][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[1] ?>][BosqueSemejanza][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[2][BosqueSemejanza][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[1] ?>][BosqueSemejanza][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[2][BosqueSemejanza][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[1] ?>][BosqueSemejanza][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[2][BosqueSemejanza][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[1] ?>][BosqueSemejanza][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[2][BosqueSemejanza][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[1] ?>][BosqueSemejanza][]" value="">
             </div>
         </div>
 
         <div id="ReySelva" class="bosque">
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[2][ReySelva][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[1] ?>][ReySelva][]" value="">
             </div>
         </div>
 
         <div id="TrioFrondoso" class="bosque">
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[2][TrioFrondoso][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[1] ?>][TrioFrondoso][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[2][TrioFrondoso][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[1] ?>][TrioFrondoso][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[2][TrioFrondoso][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[1] ?>][TrioFrondoso][]" value="">
             </div>
         </div>
 
         <div id="PradoDiferencia" class="piedra">
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[2][PradoDiferencia][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[1] ?>][PradoDiferencia][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[2][PradoDiferencia][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[1] ?>][PradoDiferencia][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[2][PradoDiferencia][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[1] ?>][PradoDiferencia][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[2][PradoDiferencia][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[1] ?>][PradoDiferencia][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[2][PradoDiferencia][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[1] ?>][PradoDiferencia][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[2][PradoDiferencia][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[1] ?>][PradoDiferencia][]" value="">
             </div>
         </div>
 
         <div id="PraderaAmor" class="piedra">
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[2][PraderaAmor][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[1] ?>][PraderaAmor][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[2][PraderaAmor][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[1] ?>][PraderaAmor][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[2][PraderaAmor][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[1] ?>][PraderaAmor][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[2][PraderaAmor][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[1] ?>][PraderaAmor][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[2][PraderaAmor][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[1] ?>][PraderaAmor][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[2][PraderaAmor][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[1] ?>][PraderaAmor][]" value="">
             </div>
         </div>
 
         <div id="IslaSolitaria" class="piedra">
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[2][IslaSolitaria][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[1] ?>][IslaSolitaria][]" value="">
             </div>
         </div>
 
         <div id="Rio" class="piedra bosque">
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[2][Rio][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[1] ?>][Rio][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[2][Rio][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[1] ?>][Rio][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[2][Rio][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[1] ?>][Rio][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[2][Rio][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[1] ?>][Rio][]" value="">
             </div>
             <div class="celda">
                 <input type="button" class="btn-dino">
-                <input type="hidden" name="tableros[2][Rio][]" value="">
+                <input type="hidden" name="tableros[<?= $jugadores[1] ?>][Rio][]" value="">
             </div>
         </div>
 </section>
