@@ -15,146 +15,288 @@
             <button class="der" type="button">></button>
         </nav>
         <main class="cuadradito">
+    <form action="../controllers/PartidaController.php" method="POST" id="formPartida">
 
-            <section class="tablero">
+    <section class="tablero">
 
-                <form action="../controllers/PartidaController.php" method="POST">
-                    <div id="BosqueSemejanza" class="bosque">
-                        <div class="celda"><input type="button" name="BosqueSemejanza[]"></div>
-                        <div class="celda"><input type="button" name="BosqueSemejanza[]"></div>
-                        <div class="celda"><input type="button" name="BosqueSemejanza[]"></div>
-                        <div class="celda"><input type="button" name="BosqueSemejanza[]"></div>
-                        <div class="celda"><input type="button" name="BosqueSemejanza[]"></div>
-                        <div class="celda"><input type="button" name="BosqueSemejanza[]"></div>
-                    </div>
-                </form>
+        <div id="BosqueSemejanza" class="bosque">
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][BosqueSemejanza][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][BosqueSemejanza][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][BosqueSemejanza][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][BosqueSemejanza][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][BosqueSemejanza][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][BosqueSemejanza][]" value="">
+            </div>
+        </div>
 
-                <form action="../controllers/PartidaController.php" method="POST">
-                    <div id="ReySelva" class="bosque">
-                        <div class="celda"><input type="button" name="ReySelva[]"></div>
-                    </div>
-                </form>
+        <div id="ReySelva" class="bosque">
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][ReySelva][]" value="">
+            </div>
+        </div>
 
-                <form action="../controllers/PartidaController.php" method="POST">
-                    <div id="TrioFrondoso" class="bosque">
-                        <div class="celda"><input type="button" name="TrioFrondoso[]"></div>
-                        <div class="celda"><input type="button" name="TrioFrondoso[]"></div>
-                        <div class="celda"><input type="button" name="TrioFrondoso[]"></div>
-                    </div>
-                </form>
+        <div id="TrioFrondoso" class="bosque">
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][TrioFrondoso][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][TrioFrondoso][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][TrioFrondoso][]" value="">
+            </div>
+        </div>
 
-                <form action="../controllers/PartidaController.php" method="POST">
-                    <div id="PradoDiferencia" class="piedra">
-                        <div class="celda"><input type="button" name="PradoDiferencia[]"></div>
-                        <div class="celda"><input type="button" name="PradoDiferencia[]"></div>
-                        <div class="celda"><input type="button" name="PradoDiferencia[]"></div>
-                        <div class="celda"><input type="button" name="PradoDiferencia[]"></div>
-                        <div class="celda"><input type="button" name="PradoDiferencia[]"></div>
-                        <div class="celda"><input type="button" name="PradoDiferencia[]"></div>
-                    </div>
-                </form>
+        <div id="PradoDiferencia" class="piedra">
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][PradoDiferencia][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][PradoDiferencia][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][PradoDiferencia][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][PradoDiferencia][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][PradoDiferencia][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][PradoDiferencia][]" value="">
+            </div>
+        </div>
 
-                <form action="../controllers/PartidaController.php" method="POST">
-                    <div id="PraderaAmor" class="piedra">
-                        <div class="celda"><input type="button" name="PraderAmor[]"></div>
-                        <div class="celda"><input type="button" name="PraderAmor[]"></div>
-                        <div class="celda"><input type="button" name="PraderAmor[]"></div>
-                        <div class="celda"><input type="button" name="PraderAmor[]"></div>
-                        <div class="celda"><input type="button" name="PraderAmor[]"></div>
-                        <div class="celda"><input type="button" name="PraderAmor[]"></div>
-                    </div>
-                </form>
+        <div id="PraderaAmor" class="piedra">
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][PraderaAmor][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][PraderaAmor][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][PraderaAmor][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][PraderaAmor][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][PraderaAmor][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][PraderaAmor][]" value="">
+            </div>
+        </div>
 
-                <form action="../controllers/PartidaController.php" method="POST">
-                    <div id="IslaSolitaria" class="piedra">
-                        <div class="celda"><input type="button" name="IslaSolitaria[]"></div>
-                    </div>
-                </form>
+        <div id="IslaSolitaria" class="piedra">
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][IslaSolitaria][]" value="">
+            </div>
+        </div>
 
-                <form action="../controllers/PartidaController.php" method="POST">
-                    <div id="rio" class="piedra bosque">
-                        <div class="celda"><input type="button" name="rio[]"></div>
-                        <div class="celda"><input type="button" name="rio[]"></div>
-                        <div class="celda"><input type="button" name="rio[]"></div>
-                        <div class="celda"><input type="button" name="rio[]"></div>
-                        <div class="celda"><input type="button" name="rio[]"></div>
-                    </div>
-                </form>
+        <div id="Rio" class="piedra bosque">
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][Rio][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][Rio][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][Rio][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][Rio][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][Rio][]" value="">
+            </div>
+        </div>
+</section>
 
-            </section>
 
-            <section class="tablero">
+    <section class="tablero">
 
-                <form action="../controllers/PartidaController.php" method="POST">
-                    <div id="BosqueSemejanza" class="bosque">
-                        <div class="celda"><input type="button" name="BosqueSemejanza[]"></div>
-                        <div class="celda"><input type="button" name="BosqueSemejanza[]"></div>
-                        <div class="celda"><input type="button" name="BosqueSemejanza[]"></div>
-                        <div class="celda"><input type="button" name="BosqueSemejanza[]"></div>
-                        <div class="celda"><input type="button" name="BosqueSemejanza[]"></div>
-                        <div class="celda"><input type="button" name="BosqueSemejanza[]"></div>
-                    </div>
-                </form>
+        <div id="BosqueSemejanza" class="bosque">
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][BosqueSemejanza][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][BosqueSemejanza][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][BosqueSemejanza][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][BosqueSemejanza][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][BosqueSemejanza][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][BosqueSemejanza][]" value="">
+            </div>
+        </div>
 
-                <form action="../controllers/PartidaController.php" method="POST">
-                    <div id="ReySelva" class="bosque">
-                        <div class="celda"><input type="button" name="ReySelva[]"></div>
-                    </div>
-                </form>
+        <div id="ReySelva" class="bosque">
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][ReySelva][]" value="">
+            </div>
+        </div>
 
-                <form action="../controllers/PartidaController.php" method="POST">
-                    <div id="TrioFrondoso" class="bosque">
-                        <div class="celda"><input type="button" name="TrioFrondoso[]"></div>
-                        <div class="celda"><input type="button" name="TrioFrondoso[]"></div>
-                        <div class="celda"><input type="button" name="TrioFrondoso[]"></div>
-                    </div>
-                </form>
+        <div id="TrioFrondoso" class="bosque">
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][TrioFrondoso][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][TrioFrondoso][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][TrioFrondoso][]" value="">
+            </div>
+        </div>
 
-                <form action="../controllers/PartidaController.php" method="POST">
-                    <div id="PradoDiferencia" class="piedra">
-                        <div class="celda"><input type="button" name="PradoDiferencia[]"></div>
-                        <div class="celda"><input type="button" name="PradoDiferencia[]"></div>
-                        <div class="celda"><input type="button" name="PradoDiferencia[]"></div>
-                        <div class="celda"><input type="button" name="PradoDiferencia[]"></div>
-                        <div class="celda"><input type="button" name="PradoDiferencia[]"></div>
-                        <div class="celda"><input type="button" name="PradoDiferencia[]"></div>
-                    </div>
-                </form>
+        <div id="PradoDiferencia" class="piedra">
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][PradoDiferencia][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][PradoDiferencia][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][PradoDiferencia][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][PradoDiferencia][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][PradoDiferencia][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][PradoDiferencia][]" value="">
+            </div>
+        </div>
 
-                <form action="../controllers/PartidaController.php" method="POST">
-                    <div id="PraderaAmor" class="piedra">
-                        <div class="celda"><input type="button" name="PraderAmor[]"></div>
-                        <div class="celda"><input type="button" name="PraderAmor[]"></div>
-                        <div class="celda"><input type="button" name="PraderAmor[]"></div>
-                        <div class="celda"><input type="button" name="PraderAmor[]"></div>
-                        <div class="celda"><input type="button" name="PraderAmor[]"></div>
-                        <div class="celda"><input type="button" name="PraderAmor[]"></div>
-                    </div>
-                </form>
+        <div id="PraderaAmor" class="piedra">
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][PraderaAmor][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][PraderaAmor][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][PraderaAmor][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][PraderaAmor][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][PraderaAmor][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][PraderaAmor][]" value="">
+            </div>
+        </div>
 
-                <form action="../controllers/PartidaController.php" method="POST">
-                    <div id="IslaSolitaria" class="piedra">
-                        <div class="celda"><input type="button" name="IslaSolitaria[]"></div>
-                    </div>
-                </form>
+        <div id="IslaSolitaria" class="piedra">
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][IslaSolitaria][]" value="">
+            </div>
+        </div>
 
-                <form action="../controllers/PartidaController.php" method="POST">
-                    <div id="rio" class="piedra bosque">
-                        <div class="celda"><input type="button" name="rio[]"></div>
-                        <div class="celda"><input type="button" name="rio[]"></div>
-                        <div class="celda"><input type="button" name="rio[]"></div>
-                        <div class="celda"><input type="button" name="rio[]"></div>
-                        <div class="celda"><input type="button" name="rio[]"></div>
-                    </div>
-                </form>
-            </section>
+        <div id="Rio" class="piedra bosque">
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][Rio][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][Rio][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][Rio][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][Rio][]" value="">
+            </div>
+            <div class="celda">
+                <input type="button" class="btn-dino">
+                <input type="hidden" name="tableros[<?= $id_usuario ?>][Rio][]" value="">
+            </div>
+        </div>
+</section>
+
         </main>
             <footer class="cuadradito">
-                    <form action="../controllers/PartidaController.php" method="POST" id="formPartida">
+                        <input type="hidden" name="action" value="calcular_puntos">
                         <button type="submit" class="calcularpuntos">CALCULAR PUNTOS</button>
-                    </form>
             </footer>
     </section>
+    </form>
     <script src="../../public/js/juegocalculadora.js"></script>
 </body>
 </html>

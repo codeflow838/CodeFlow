@@ -23,6 +23,12 @@ input[type="button"]
     border: none;
 }
 
+form#formPartida {
+    display: contents;
+}
+
+
+
 #contenedor {
     width: 100%;
     height: 100vh;
