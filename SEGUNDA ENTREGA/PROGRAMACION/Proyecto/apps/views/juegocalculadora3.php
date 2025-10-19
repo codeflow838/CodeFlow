@@ -129,7 +129,7 @@
             </div>
         </div>
 
-        <div id="Rio" class="piedra bosque">
+        <div id="rio" class="piedra bosque">
             <div class="celda">
                 <input type="button" class="btn-dino">
                 <input type="hidden" name="tableros[<?= $jugadores[0] ?>][Rio][]" value="">
@@ -266,7 +266,7 @@
             </div>
         </div>
 
-        <div id="Rio" class="piedra bosque">
+        <div id="rio" class="piedra bosque">
             <div class="celda">
                 <input type="button" class="btn-dino">
                 <input type="hidden" name="tableros[<?= $jugadores[1] ?>][Rio][]" value="">
@@ -402,7 +402,7 @@
             </div>
         </div>
 
-        <div id="Rio" class="piedra bosque">
+        <div id="rio" class="piedra bosque">
             <div class="celda">
                 <input type="button" class="btn-dino">
                 <input type="hidden" name="tableros[<?= $jugadores[2] ?>][Rio][]" value="">

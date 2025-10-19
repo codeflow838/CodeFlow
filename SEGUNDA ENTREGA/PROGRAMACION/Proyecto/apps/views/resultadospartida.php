@@ -31,7 +31,6 @@ $puntajes = $_SESSION['puntajes'] ?? [];
     <?php else: ?>
         <div class="mensaje">No hay puntajes disponibles. Parece que no se jugaron los tableros correctamente.</div>
     <?php endif; ?>
-
     <div class="volver-inicio">
         <a href="../../public/index.html"><button>Volver al inicio</button></a>
     </div>
