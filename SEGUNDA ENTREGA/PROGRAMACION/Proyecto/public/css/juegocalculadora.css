@@ -56,7 +56,8 @@ nav {
 
 main {
     grid-area: main;
-    background-color: lightgoldenrodyellow;
+    background: url("../images/Fondo.PNG") no-repeat center;
+    background-size: cover;
 }
 
 footer {
@@ -322,6 +323,18 @@ footer {
         display: grid;
         grid-template-columns: repeat(1, 5fr);
         background-color: transparent;
+    }
+
+    .calcularpuntos {
+    background-color: black;
+    color: white;
+    width: 50vw;
+    height: 15vh;
+    border-radius: 3rem;
+    cursor: pointer;
+    font-family: "Irish Grover", cursive;
+    letter-spacing: 0.2rem;
+    font-size: 1.5rem;
     }
 }
 
