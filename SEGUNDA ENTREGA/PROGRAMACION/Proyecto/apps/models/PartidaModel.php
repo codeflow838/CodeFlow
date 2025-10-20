@@ -78,37 +78,64 @@ class Partida
 
     private function BosqueSemejanza($dinos)
     {
-        $dinos = array_filter($dinos, fn($d)=>!empty($d));
-        if (empty($dinos)) return 0;
-        $primera = $dinos[0];
-        foreach ($dinos as $dino) if ($dino !== $primera) return 0;
-        switch (count($dinos)) {
-            case 1: return 2;
-            case 2: return 4;
-            case 3: return 8;
-            case 4: return 12;
-            case 5: return 18;
-            case 6: return 24;
+    if (empty($dinos) || empty($dinos[0])) return 0;
+    $primera = $dinos[0];
+    $cantidad = 0;
+    foreach ($dinos as $dino) {
+        if (empty($dino)) break;
+        if ($dino !== $primera) break;
+        $cantidad++;
+    }
+
+    switch ($cantidad) {
+        case 1:
+            return 2;
+        case 2:
+            return 4;
+        case 3:
+            return 8;
+        case 4:
+            return 12;
+        case 5:
+            return 18;
+        case 6:
+            return 24;
+        default:
+            return 0;
         }
-        return 0;
     }
 
     private function PradoDiferencia($dinos)
     {
-        $dinos = array_filter($dinos, fn($d)=>!empty($d));
-        if (empty($dinos)) return 0;
-        if (count($dinos) !== count(array_unique($dinos))) return 0;
-        switch (count($dinos)) {
-            case 1: return 1;
-            case 2: return 3;
-            case 3: return 6;
-            case 4: return 10;
-            case 5: return 15;
-            case 6: return 21;
-        }
-        return 0;
+    if (empty($dinos) || empty($dinos[0])) return 0;
+    $vistos = [];
+    $cantidad = 0;
+    foreach ($dinos as $dino) {
+        if (empty($dino)) break;
+        if (in_array($dino, $vistos)) break;
+        $vistos[] = $dino;
+        $cantidad++;
     }
 
+        switch ($cantidad)  {
+        case 0:
+        case 1:
+            return 1;
+        case 2:
+            return 3;
+        case 3:
+            return 6;
+        case 4:
+            return 10;
+        case 5:
+            return 15;
+        case 6:
+            return 21;
+        default:
+            return 0;
+        }
+    }
+    
     private function PraderaAmor($dinos)
     {
         $dinos = array_filter($dinos, fn($d)=>!empty($d));
@@ -133,26 +160,26 @@ class Partida
 
     private function ReyDeLaSelva($dino = "", $parques = [])
     {
-        if (empty($dino) || empty($parques)) return 0;
+    if (empty($dino) || empty($parques)) return 0;
 
-        $miParque = $parques[0];
-        $miConteo = 0;
+    $miParque = $parques[0];
+    $miConteo = 0;
 
-        foreach ($miParque as $recinto) {
+    foreach ($miParque as $recinto) {
+        foreach ($recinto as $d) {
+            if ($d === $dino) $miConteo++;
+        }
+    }
+
+    for ($i = 1; $i < count($parques); $i++) {
+        $otroConteo = 0;
+        foreach ($parques[$i] as $recinto) {
             foreach ($recinto as $d) {
-                if ($d === $dino) $miConteo++;
+                if ($d === $dino) $otroConteo++;
             }
         }
-
-        for ($i = 1; $i < count($parques); $i++) {
-            $conteoOponente = 0;
-            foreach ($parques[$i] as $recinto) {
-                foreach ($recinto as $d) {
-                    if ($d === $dino) $conteoOponente++;
-                }
-            }
-            if ($conteoOponente > $miConteo) return 0;
-        }
+        if ($otroConteo > $miConteo) return 0;
+    }
 
         return 7;
     }
