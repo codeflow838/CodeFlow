@@ -9,13 +9,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
     color: black;
+    font-family: "Irish Grover", cursive;
 }
+
 
 html, body {
     height: 100%;
     width: 100%;
+    font-family: "Irish Grover", cursive;
 }
 
 input[type="button"] 
@@ -47,6 +49,7 @@ form#formPartida {
 header {
     grid-area: header;
     background-color: lightblue;
+    font-family: "Irish Grover", cursive;
 }
 
 nav {
@@ -187,7 +190,7 @@ footer {
 }
 
 .calcularpuntos {
-        background-color: black;
+    background-color: black;
     color: white;
     width: 20vw;
     height: 10vh;

@@ -8,7 +8,7 @@
 </head>
 <body>
     <section id="contenedor">
-        <header class="cuadradito">Tablero de: ""</header>
+        <header class="cuadradito">MODO SEGUIMIENTO</header>
         <nav class="cuadradito">
             <button class="izq" type="button"><</button>
             <div>1/5</div>

@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../public/css/juegocalculadora.css">
     <title>PARTIDA</title>
-</head>
+</head> 
 <body>
     <section id="contenedor">
-        <header class="cuadradito">Tablero de: ""</header>
+        <header class="cuadradito">MODO SEGUIMIENTO</header>
         <nav class="cuadradito">
             <button class="izq" type="button"><</button>
             <div>1/5</div>
