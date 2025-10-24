@@ -189,27 +189,27 @@ class Partida
         $dinos = array_filter($dinos, fn($d) => !empty($d));
         return count($dinos);
     }
-
+//REQUERIMIENTO FUNCIONAL "El sistema debe calcular el puntaje total de cada jugador al finalizar la partida"
     public function PuntajeTotal($tablero = null)
     {
-        if ($tablero === null) {
-            $tablero = $this->tableros[0];
+        if ($tablero === null) { //NODO1
+            $tablero = $this->tableros[0]; //NODO2
         }
 
-        $total = 0;
+        $total = 0; //NODO3
 
-        $total += $this->TrioFrondoso($tablero['TrioFrondoso'] ?? []);
-        $total += $this->BosqueSemejanza($tablero['BosqueSemejanza'] ?? []);
-        $total += $this->PradoDiferencia($tablero['PradoDiferencia'] ?? []);
-        $total += $this->PraderaAmor($tablero['PraderaAmor'] ?? []);
+        $total += $this->TrioFrondoso($tablero['TrioFrondoso'] ?? []); //NODO4
+        $total += $this->BosqueSemejanza($tablero['BosqueSemejanza'] ?? []); //NODO5
+        $total += $this->PradoDiferencia($tablero['PradoDiferencia'] ?? []); //NODO6
+        $total += $this->PraderaAmor($tablero['PraderaAmor'] ?? []); //NODO7
 
-        $total += $this->IslaSolitaria($tablero['IslaSolitaria'][0] ?? "", $tablero);
+        $total += $this->IslaSolitaria($tablero['IslaSolitaria'][0] ?? "", $tablero); //NODO8
 
-        $total += $this->ReyDeLaSelva($tablero['ReySelva'][0] ?? "", $this->tableros);
+        $total += $this->ReyDeLaSelva($tablero['ReySelva'][0] ?? "", $this->tableros); //NODO9
 
-        $total += $this->Rio($tablero['Rio'] ?? []);
+        $total += $this->Rio($tablero['Rio'] ?? []); //NODO10
 
-        return $total;
+        return $total; //NODO11
     }
 
 
