@@ -69,42 +69,42 @@ class Partida
             ];
         }
     }
-
+//REQUERIMIENTO FUNCIONAL "El sistema debe aplicar automáticamente las reglas impuestas por los recintos (TrioFrondoso)"
     private function TrioFrondoso($dinos)
     {
-        $dinos = array_filter($dinos, fn($d)=>!empty($d));
-        return (count($dinos) === 3) ? 7 : 0;
+        $dinos = array_filter($dinos, fn($d)=>!empty($d)); //NODO1
+    /*NODO2*/return (count($dinos) === 3) ? /*NODO3*/7 : /*NODO4*/ 0;
     }
-
+//REQUERIMIENTO FUNCIONAL "El sistema debe aplicar automáticamente las reglas impuestas por los recintos (BosqueSemejanza)"
     private function BosqueSemejanza($dinos)
     {
-    if (empty($dinos) || empty($dinos[0])) return 0;
-    $primera = $dinos[0];
+    /* NODO 1*/if (empty($dinos) || empty($dinos[0])) /* NODO 2*/return 0; 
+    $primera = $dinos[0]; /* NODO 3*/
     $cantidad = 0;
-    foreach ($dinos as $dino) {
-        if (empty($dino)) break;
-        if ($dino !== $primera) break;
-        $cantidad++;
+    foreach ($dinos as $dino)/* NODO 4*/ {
+        if (empty($dino)) break; /* NODO 5*/
+        if ($dino !== $primera) break; /* NODO 6*/
+        $cantidad++; /* NODO 7*/
     }
 
-    switch ($cantidad) {
+    switch ($cantidad) { /* NODO 8*/
         case 1:
-            return 2;
+            return 2; /* NODO 9*/
         case 2:
-            return 4;
+            return 4; /* NODO 10*/
         case 3:
-            return 8;
+            return 8; /* NODO 11*/
         case 4:
-            return 12;
+            return 12; /* NODO 12*/
         case 5:
-            return 18;
+            return 18; /* NODO 13*/
         case 6:
-            return 24;
+            return 24; /* NODO 14*/
         default:
-            return 0;
+            return 0; /* NODO 15*/
         }
     }
-
+//REQUERIMIENTO FUNCIONAL "El sistema debe aplicar automáticamente las reglas impuestas por los recintos (PradoDiferencia)"
     private function PradoDiferencia($dinos)
     {
     if (empty($dinos) || empty($dinos[0])) return 0;
@@ -135,7 +135,7 @@ class Partida
             return 0;
         }
     }
-    
+    //REQUERIMIENTO FUNCIONAL "El sistema debe aplicar automáticamente las reglas impuestas por los recintos (PraderaAmor)"
     private function PraderaAmor($dinos)
     {
         $dinos = array_filter($dinos, fn($d)=>!empty($d));
@@ -145,7 +145,7 @@ class Partida
         foreach ($conteo as $c) $puntos += intdiv($c,2)*5;
         return $puntos;
     }
-
+    //REQUERIMIENTO FUNCIONAL "El sistema debe aplicar automáticamente las reglas impuestas por los recintos (IslaSolitaria)"
     private function IslaSolitaria($dino = "", $tablero = [])
     {
         if (empty($dino) || empty($tablero)) return 0;
@@ -157,7 +157,7 @@ class Partida
         }
         return ($conteo === 1) ? 7 : 0;
     }
-
+    //REQUERIMIENTO FUNCIONAL "El sistema debe aplicar automáticamente las reglas impuestas por los recintos (ReyDeLaSelva)"
     private function ReyDeLaSelva($dino = "", $parques = [])
     {
     if (empty($dino) || empty($parques)) return 0;
@@ -183,7 +183,7 @@ class Partida
 
         return 7;
     }
-
+    //REQUERIMIENTO FUNCIONAL "El sistema debe aplicar automáticamente las reglas impuestas por los recintos (rio)"
     private function Rio($dinos)
     {
         $dinos = array_filter($dinos, fn($d) => !empty($d));
