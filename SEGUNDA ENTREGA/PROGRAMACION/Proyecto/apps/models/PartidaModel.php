@@ -138,50 +138,50 @@ class Partida
     //REQUERIMIENTO FUNCIONAL "El sistema debe aplicar automáticamente las reglas impuestas por los recintos (PraderaAmor)"
     private function PraderaAmor($dinos)
     {
-        $dinos = array_filter($dinos, fn($d)=>!empty($d));
-        if (empty($dinos)) return 0;
-        $conteo = array_count_values($dinos);
-        $puntos = 0;
-        foreach ($conteo as $c) $puntos += intdiv($c,2)*5;
-        return $puntos;
+        $dinos = array_filter($dinos, fn($d)=>!empty($d)); /* NODO 1*/
+        /* NODO 2*/if (empty($dinos)) return 0; /* NODO 3*/
+        $conteo = array_count_values($dinos); /* NODO 4*/
+        $puntos = 0; /* NODO 5*/
+        /* NODO 6*/foreach ($conteo as $c) $puntos += intdiv($c,2)*5; /* NODO 7*/
+        return $puntos; /* NODO 8*/
     }
     //REQUERIMIENTO FUNCIONAL "El sistema debe aplicar automáticamente las reglas impuestas por los recintos (IslaSolitaria)"
     private function IslaSolitaria($dino = "", $tablero = [])
     {
-        if (empty($dino) || empty($tablero)) return 0;
-        $conteo = 0;
-        foreach ($tablero as $recinto) {
-            foreach ($recinto as $d) {
-                if ($d === $dino) $conteo++;
+        /* NODO 1*/if (empty($dino) || empty($tablero)) return 0; /* NODO 2*/
+        $conteo = 0; /* NODO 3*/
+        /* NODO 4*/foreach ($tablero as $recinto) {
+            /* NODO 5*/foreach ($recinto as $d) {
+            /* NODO 6*/ if ($d === $dino) $conteo++; /* NODO 7*/
             }
         }
-        return ($conteo === 1) ? 7 : 0;
+        return ($conteo === 1) ? 7 : 0; /* NODO 8*/
     }
     //REQUERIMIENTO FUNCIONAL "El sistema debe aplicar automáticamente las reglas impuestas por los recintos (ReyDeLaSelva)"
     private function ReyDeLaSelva($dino = "", $parques = [])
     {
-    if (empty($dino) || empty($parques)) return 0;
+    /* NODO 1*/if (empty($dino) || empty($parques)) return 0;/* NODO 2*/
 
-    $miParque = $parques[0];
+    $miParque = $parques[0]; /* NODO 3*/
     $miConteo = 0;
 
-    foreach ($miParque as $recinto) {
-        foreach ($recinto as $d) {
-            if ($d === $dino) $miConteo++;
+    foreach ($miParque as $recinto)  /* NODO 4*/ {
+    /* NODO 5*/    foreach ($recinto as $d)  {
+    /* NODO 6*/  if ($d === $dino) $miConteo++;/* NODO 7*/ 
         }
     }
 
-    for ($i = 1; $i < count($parques); $i++) {
-        $otroConteo = 0;
-        foreach ($parques[$i] as $recinto) {
-            foreach ($recinto as $d) {
-                if ($d === $dino) $otroConteo++;
+    /* NODO 8*/ for ($i = 1; $i < count($parques); $i++) {
+    /* NODO 9*/ $otroConteo = 0;
+    /* NODO 10*/ foreach ($parques[$i] as $recinto) {
+    /* NODO 11*/foreach ($recinto as $d) {
+        /* NODO 12*/ if ($d === $dino) $otroConteo++; /* NODO 13*/
             }
         }
-        if ($otroConteo > $miConteo) return 0;
+    /* NODO 14*/ if ($otroConteo > $miConteo) return 0; /* NODO 15*/
     }
 
-        return 7;
+        return 7; /* NODO 16*/
     }
     //REQUERIMIENTO FUNCIONAL "El sistema debe aplicar automáticamente las reglas impuestas por los recintos (rio)"
     private function Rio($dinos)
