@@ -107,32 +107,32 @@ class Partida
 //REQUERIMIENTO FUNCIONAL "El sistema debe aplicar automáticamente las reglas impuestas por los recintos (PradoDiferencia)"
     private function PradoDiferencia($dinos)
     {
-    if (empty($dinos) || empty($dinos[0])) return 0;
-    $vistos = [];
+    /* NODO 1*/if (empty($dinos) || empty($dinos[0])) return 0; /* NODO 2*/
+    $vistos = [];/* NODO 3*/
     $cantidad = 0;
-    foreach ($dinos as $dino) {
-        if (empty($dino)) break;
-        if (in_array($dino, $vistos)) break;
-        $vistos[] = $dino;
+    foreach ($dinos as $dino)  /* NODO 4*/{
+        if (empty($dino)) break; /* NODO 5*/
+        if (in_array($dino, $vistos)) break; /* NODO 6*/
+        $vistos[] = $dino; /* NODO 7*/
         $cantidad++;
     }
 
-        switch ($cantidad)  {
-        case 0:
+        /* NODO 8*/switch ($cantidad)  {
+        case 0: /* NODO 9*/
         case 1:
-            return 1;
+            return 1; /* NODO 10*/
         case 2:
-            return 3;
+            return 3; /* NODO 11*/
         case 3:
-            return 6;
+            return 6; /* NODO 12*/
         case 4:
-            return 10;
+            return 10; /* NODO 13*/
         case 5:
-            return 15;
+            return 15; /* NODO 14*/
         case 6:
-            return 21;
+            return 21; /* NODO 15*/
         default:
-            return 0;
+            return 0; /* NODO 16*/
         }
     }
     //REQUERIMIENTO FUNCIONAL "El sistema debe aplicar automáticamente las reglas impuestas por los recintos (PraderaAmor)"
